@@ -1,27 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import CategoryImageGrid2 from './components/mainPageComponent/categoryImageGrid2'
 
 function App() {
+  const test = [];
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img
-          src={'https://i.imgur.com/KKR9P1z.jpg'}
-          className='App-logo'
-          alt='logo'
-        />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <CategoryImageGrid2 data ={test} />
     </div>
   );
 }
