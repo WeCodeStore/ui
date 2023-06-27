@@ -1,5 +1,5 @@
 .rowContainer  {
-    gap:.2rem;
+    gap:.1rem;
     grid-template-columns: 1fr 1fr 1fr;
     padding-block:.5rem;
     margin-inline:auto;
@@ -8,12 +8,31 @@
 }
 
 .categoryImg2 {
-    width: 200px !important; /* You can set the dimensions to whatever you want */
-    height: 200px;
+    max-width: 200px !important; /* You can set the dimensions to whatever you want */
+    max-height: 200px;
     object-fit: cover;
 }
 
 .categoryImg {
 object-fit: cover;
 border-radius: 55;
+}
+
+.header{
+    text-align:center;
+}
+
+.container{
+    margin: auto;
+    margin-top:15px;
+    max-width: 1000px;
+    min-width: 800px;
+    display: grid;
+    gap: .5em;
+    grid-template-columns: repeat(3, 1fr );
+}
+
+.img{object-fit: cover;
+    height: 300px;
+    width: 300px;
 }
