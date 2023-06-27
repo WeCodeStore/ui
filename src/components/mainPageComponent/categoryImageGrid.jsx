@@ -22,7 +22,7 @@ const CategoryImageGrid = ({ data }) => {
         <>
             <h3 className="header"> Shop By Category</h3>
             <div className="container">
-                        {images.map((val, k) => {
+                    {images.map((val, k) => {
                             return (
                                 <div  key={k}>
                                     <h6 className="header">{val.name}</h6>
@@ -30,11 +30,6 @@ const CategoryImageGrid = ({ data }) => {
                                 </div>)
                         })
                     }
-                   
-                {/*} <a href="#" className="items"><h6 className="header">Shop Bed</h6><img className="img" src='https://i.imgur.com/58rvHxE.jpg' /></a>
-                 <a href="#" className="items"><img className="img" src='//placeimg.com/600/400?text=2' /></a>
-                <a href="#"  className="items"><img className="img" src='//placeimg.com/600/400?text=2' /></a>  */}
-
             </div> 
             
         </>
