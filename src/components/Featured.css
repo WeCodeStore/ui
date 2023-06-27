@@ -1,0 +1,58 @@
+.featured {
+  margin: auto;
+  height: 400px;
+  max-width: 1000px;
+  min-width: 800px;
+  display: grid;
+  gap: .5em;
+  grid-template-areas: 
+  "one one one one two two three three"
+  "one one one one four five three three"
+}
+
+/* .image-one,
+.image-two,
+.image-three,
+.image-four,
+.image-five {
+  border: 1px solid blue;
+} */
+
+.image-one {
+  grid-area: one;
+  background-image: url("../../public/images/bath_towel.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-two {
+  grid-area: two;
+  background-image: url("../../public/images/living_room.jpg");
+  background-size:     cover;  
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-three {
+  grid-area: three;
+  background-image: url("../../public/images/bath_towel_color.jpeg");
+  background-size:     cover;  
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-four {
+  grid-area: four;
+  background-image: url("../../public/images/bed1.jpeg");
+  background-size:     cover;  
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-five {
+  grid-area: five;
+  background-image: url("../../public/images/bed2.jpeg");
+  background-size:     cover;  
+  background-repeat: no-repeat;
+  background-position: center center;
+}
