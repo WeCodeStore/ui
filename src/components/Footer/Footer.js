@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-testid="footer">
       <Container>
         <Row>
           <Col size="md" className="footer-subscription">
@@ -20,7 +20,7 @@ export default function Footer() {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <input type="text" id="enter" placeholder="Email"></input>
-                <button id="clear">
+                <button id="submit" data-testid="submit">
                   <BsArrowRightShort />
                 </button>
 
@@ -33,10 +33,19 @@ export default function Footer() {
                 </Form.Text>
               </Form.Group>
             </Form>
-            <BsFacebook className="social-icons" />
-            <BsTwitter className="social-icons" />
-            <BsPinterest className="social-icons" />
-            <BsInstagram className="social-icons" />
+
+            <a href="#!">
+              <BsFacebook className="social-icons" />
+            </a>
+            <a href="#!">
+              <BsTwitter className="social-icons" />
+            </a>
+            <a href="#!">
+              <BsPinterest className="social-icons" />
+            </a>
+            <a href="#!">
+              <BsInstagram className="social-icons" />
+            </a>
           </Col>
           <Col size="md" className="footer-about">
             <h5>About</h5>
@@ -53,6 +62,11 @@ export default function Footer() {
             <p>
               <a href="#!" className="">
                 Our Stores
+              </a>
+            </p>
+            <p>
+              <a href="#!" className="">
+                Press
               </a>
             </p>
           </Col>
