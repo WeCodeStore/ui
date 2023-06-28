@@ -19,12 +19,12 @@ const CategoryImageGrid = () => {
     }
     return (
         <>
-            <h3 className="header"> Shop By Category</h3>
-            <div className="container">
+            <h3 className="header-category"> Shop By Category</h3>
+            <div className="container-category">
                     {images.map((val, k) => {
                             return (
                                 <div  key={k}>
-                                    <h6 className="header">{val.name}</h6>
+                                    <h6 className="header-category">{val.name}</h6>
                                     <img src={val.src} className={'img' + (val.src === currentImage.src ? 'p-1' : '')} onClick={() => handleClick(val)} />
                                 </div>)
                         })

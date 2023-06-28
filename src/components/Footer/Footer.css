@@ -57,7 +57,7 @@
 }
 
 .social-icons {
-  margin: -15px;
+  margin: 20px 10px 20px 10px;
 }
 
 #enter {
@@ -68,7 +68,7 @@
   border-radius: 20px 0 0 20px;
 }
 
-#submit {
+#clear {
   width: 20%;
   background-color: white;
   height: 50px;
