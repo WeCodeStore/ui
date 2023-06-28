@@ -5,6 +5,6 @@ describe("CategoryImageGrid", () => {
   test("Rendering the component should display page title", () => {
     render(<CategoryImageGrid />);
 
-    screen.getByText("Shop By Category");
+    expect(screen.getByText("Shop By Category")).toBeInTheDocument();
   });
 });
