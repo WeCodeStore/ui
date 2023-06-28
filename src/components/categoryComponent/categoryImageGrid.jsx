@@ -25,7 +25,7 @@ const CategoryImageGrid = () => {
                             return (
                                 <div  key={k}>
                                     <h6 className="header">{val.name}</h6>
-                                    <img src={val.src} className={'img img-fluid ' + (val.src === currentImage.src ? 'p-1' : '')} onClick={() => handleClick(val)} />
+                                    <img src={val.src} className={'img' + (val.src === currentImage.src ? 'p-1' : '')} onClick={() => handleClick(val)} />
                                 </div>)
                         })
                     }
