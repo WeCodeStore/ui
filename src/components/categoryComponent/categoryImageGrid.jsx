@@ -1,8 +1,7 @@
 import { useState } from "react";
-//import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "./categoryImageGrid.css";
 
-const CategoryImageGrid = ({ data }) => {
+const CategoryImageGrid = () => {
 
     const [images, setImages] = useState([
         { name: 'Shop Bed', src: 'https://i.imgur.com/58rvHxE.jpg', desc: 'This describes this image..' },

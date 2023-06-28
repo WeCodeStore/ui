@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import CategoryImageGrid from "./components/mainPageComponent/categoryImageGrid";
+import PageContainer from "./pages/PageContainer";
 
 function App() {
   const test = [];
   return (
     <div className="App">
-      <CategoryImageGrid data={test} />
+      <PageContainer />
     </div>
   );
 }
