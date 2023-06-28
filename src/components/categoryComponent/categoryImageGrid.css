@@ -18,12 +18,12 @@ object-fit: cover;
 border-radius: 55;
 }
 
-.header{
+.header-category{
     text-align:center;
     margin-top: 10px;
 }
 
-.container{
+.container-category{
     margin: auto;
     margin-top:15px;
     max-width: 1000px;
