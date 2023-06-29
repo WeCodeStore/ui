@@ -18,3 +18,19 @@ h2 {
   margin: auto;
 }
 
+.flex-container {
+  display: flex;
+  
+  flex-direction: row;
+}
+
+.flex-container > div{
+  background-color: white;
+  width: 1000px;
+  /* margin: 100px; */
+  text-align: center;
+
+  line-height: 275px;
+  font-size: 30px;
+}
+

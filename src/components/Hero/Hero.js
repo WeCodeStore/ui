@@ -4,12 +4,12 @@ import "./Hero.css";
 const HeroImageGrid = () => {
    return(
     <div class="container-hero">
-      <div>
-      <h2>Large text</h2>  
-      <h3>
+      <div class="flex-container">
+        <div><h2>Large text</h2>  </div>
+      <div><h3>
         Small text
-      </h3>
-      <button>click here</button>
+        <button>click here</button>
+      </h3></div>
       </div>
       
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
