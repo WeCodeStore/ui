@@ -1,10 +1,9 @@
-import "./App.css";
-import PageContainer from "./pages/PageContainer";
+import './App.css';
+import PageContainer from './pages/PageContainer';
 
 function App() {
-  const test = [];
   return (
-    <div className="App">
+    <div className='App'>
       <PageContainer />
     </div>
   );
