@@ -4,11 +4,11 @@ import './Featured.css';
 export const Featured = () => {
   return (
     <div className="featured">
-      <a href="#" className='image-one'><div></div></a>
-      <a href="#" className='image-two'><div></div></a>
-      <a href="#" className='image-three'><div></div></a>
-      <a href="#" className='image-four'><div></div></a>
-      <a href="#" className='image-five'><div></div></a>
+      <a className="image-one" href="#"><img src="images/living_room.jpg" /></a>
+      <a className="image-two" href="#"><img src="images/ShowerCurtainPLP.jpeg" /></a>
+      <a className="image-three" href="#"><img src="images/bath_towel.jpeg" /></a>
+      <a className="image-four" href="#"><img src="images/bed1.jpeg" /></a>
+      <a className="image-five" href="#"><img src="images/bed2.jpeg" /></a>
     </div>
   )
 }
