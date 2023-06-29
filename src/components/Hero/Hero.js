@@ -3,46 +3,50 @@ import "./Hero.css";
 
 const HeroImageGrid = () => {
    return(
-    <div class="container-hero">
-      <div class="flex-container">
-        <div><h2>Large text</h2>  </div>
-      <div><h3>
-        Small text
-        <button>click here</button>
-      </h3></div>
+    <div className="hero">
+      <div className="text">
+      <div className="container-left">
+        <h2>20% off at the Summer Sale</h2>  
+        </div>
+      <div className="container-right">
+        <p>Shop all your favorites for less at our annual Summer Sale,
+sitewide and in stores.</p>
+
+        <button className="button button-white">Shop 20% Off</button>
+        </div>
       </div>
       
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="myCarousel" className="carousel slide" data-ride="carousel">
         {/* <!-- Indicators --> */}
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <ol className="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
     
         {/* <!-- Wrapper for slides --> */}
-        <div class="carousel-inner">
-          <div class="item active">
+        <div className="carousel-inner">
+          <div className="item active">
             <img src="https://imgur.com/D1ouCU1.jpeg" alt="Outdoor" />
           </div>
     
-          <div class="item">
+          <div className="item">
             <img src="https://imgur.com/tN1h4ou.jpeg" alt="Living" />
           </div>
         
-          <div class="item">
+          <div className="item">
             <img src="https://imgur.com/FhEh9GT.jpeg" alt="Bedroom" />
           </div>
         </div>
     
         {/* <!-- Left and right controls --> */}
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="sr-only">Previous</span>
+        <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span className="glyphicon glyphicon-chevron-left"></span>
+          <span className="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
+        <a className="right carousel-control" href="#myCarousel" data-slide="next">
+          <span className="glyphicon glyphicon-chevron-right"></span>
+          <span className="sr-only">Next</span>
         </a>
       </div>
     </div>

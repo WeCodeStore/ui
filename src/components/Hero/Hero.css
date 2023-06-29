@@ -1,36 +1,32 @@
-h2 {
-    text-align: left;
-    margin-left: 20;
-  }
-  
-  h3 {
-    text-align: right;
-    margin-right: 20;;
-  }
 
-  /* .carousel-inner{
-    height: 200px;
-    width: 30px;
-} */
-
-.container-hero{
+.hero{
   max-width: 1000px;
   margin: auto;
 }
 
-.flex-container {
+.text{
   display: flex;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container-left , .container-right{
+  width: 500px;
+}
+
+.container-left {
+  display: flex;
+  align-items: center;
   
-  flex-direction: row;
 }
 
-.flex-container > div{
-  background-color: white;
-  width: 1000px;
-  /* margin: 100px; */
-  text-align: center;
-
-  line-height: 275px;
-  font-size: 30px;
+.container-right{
+  font-size: 1.5em;
 }
 
+.container-left h2{
+
+  font-size: 4em;
+  font-family: 'Lobster', cursive;
+}
