@@ -1,0 +1,41 @@
+.featured {
+  margin: auto;
+  margin-top: 20px;
+  height: 400px;
+  width: 1000px;
+  display: grid;
+  gap: 5px;
+  grid-template-areas: 
+  "one one one one two two three three"
+  "one one one one four five three three"
+}
+
+.image-one {
+  grid-area: one;
+}
+
+.image-two {
+  grid-area: two;
+}
+
+.image-three {
+  grid-area: three;
+}
+
+.image-four {
+  grid-area: four;
+}
+
+.image-five {
+  grid-area: five;
+}
+
+.featured img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.featured a {
+  display: block;
+}
