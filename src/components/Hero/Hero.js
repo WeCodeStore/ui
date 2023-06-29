@@ -4,10 +4,14 @@ import "./Hero.css";
 const HeroImageGrid = () => {
    return(
     <div class="container-hero">
+      <div>
       <h2>Large text</h2>  
       <h3>
         Small text
       </h3>
+      <button>click here</button>
+      </div>
+      
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         {/* <!-- Indicators --> */}
         <ol class="carousel-indicators">
