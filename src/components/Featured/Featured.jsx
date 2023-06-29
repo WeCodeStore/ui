@@ -1,7 +1,7 @@
 import React from 'react'
 import './Featured.css';
 
-export const Featured = () => {
+const Featured = () => {
   return (
     <div className="featured">
       <a className="image-one" href="#"><img src="images/living_room.jpg" /></a>
@@ -12,3 +12,5 @@ export const Featured = () => {
     </div>
   )
 }
+
+export default Featured;

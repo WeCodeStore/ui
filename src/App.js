@@ -1,10 +1,10 @@
-import { Featured } from './components/Featured.tsx';
 import './App.css';
+import PageContainer from './pages/PageContainer';
 
 function App() {
   return (
     <div className='App'>
-      <Featured />
+      <PageContainer />
     </div>
   );
 }
