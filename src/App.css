@@ -8,3 +8,18 @@ body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
+
+.button{
+padding: 1em;
+border-radius: 10px;
+}  
+
+.button-white{
+background: white;
+border: 1px solid rgb(40, 52, 85);
+}
+
+.button-white:hover{
+background: rgb(40, 52, 85);
+color: white;
+}
