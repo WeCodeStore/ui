@@ -20,17 +20,17 @@ const CategoryImageGrid = () => {
     },
     {
       name: 'Shop Tools',
-      src: '//placeimg.com/600/400?text=4',
+      src: 'https://i.imgur.com/g23l9qM.jpg',
       desc: 'This describes this image 4..',
     },
     {
       name: 'Shop Cloths',
-      src: '//placeimg.com/600/400?text=5',
+      src: 'https://i.imgur.com/pg4YTSs.jpg',
       desc: 'This describes this image 5..',
     },
     {
       name: 'Shop Electronics',
-      src: '//placeimg.com/600/400?text=6',
+      src: 'https://i.imgur.com/QoOT1WH.jpg',
       desc: 'This describes this image 6..',
     },
   ]);
