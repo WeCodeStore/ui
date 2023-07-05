@@ -1,11 +1,12 @@
-export default function Product() {
+export default function Product({ product, rating }) {
   return (
     <div>
-      <h2>Product image</h2>
-      <p>title</p>
-      <p>description</p>
-      <p>price</p>
-      <p>rating</p>
+      <p>{product.name}</p>
+      <p>{product.price}</p>
+      <p>{product.image}</p>
+      <p>{product.description}</p>
+      <p>{product.category}</p>
+      <p>{rating}</p>
     </div>
   );
 }

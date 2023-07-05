@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomeViewComponent from "../components/HomeViewComponent";
+import HomeViewComponent from "../pages/HomeViewPage/HomeViewComponent";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import ShopViewContainer from "./ShopViewContainer";
+import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
 
 const PageContainer = () => {
   return (
