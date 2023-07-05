@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Pagination from "react-bootstrap/Pagination";
 
-const PaginationStepper = ({ numPages, currentPage, pageSelectedHandler }) => {
+const PaginationStepper = ({ totalPages, currentPage, pageSelectedHandler }) => {
   const [active, setActive] = useState(currentPage);
   let items = [];
 
@@ -11,7 +11,7 @@ const PaginationStepper = ({ numPages, currentPage, pageSelectedHandler }) => {
     pageSelectedHandler(number);
   };
 
-  for (let number = 0; number <= numPages - 1; number++) {
+  for (let number = 0; number <= totalPages - 1; number++) {
     items.push(
       <Pagination.Item
         key={number}
@@ -33,7 +33,7 @@ const PaginationStepper = ({ numPages, currentPage, pageSelectedHandler }) => {
   };
 
   const handleNext = () => {
-    if (active < numPages - 1) {
+    if (active < totalPages - 1) {
       setActive(active + 1);
       pageSelectedHandler(active + 1);
     }
