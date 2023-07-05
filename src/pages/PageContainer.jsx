@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeViewComponent from "../components/HomeViewComponent";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import ShopViewContainer from "./ShopViewContainer";
 
 const PageContainer = () => {
   return (
@@ -12,8 +13,10 @@ const PageContainer = () => {
         </div>
         <Routes>
           <Route path="/" element={<HomeViewComponent />}></Route>
+          <Route path="/shop" element={<ShopViewContainer />}></Route>
         </Routes>
         <Footer />
+        {/* <ShopViewContainer /> */}
       </div>
     </BrowserRouter>
   );
