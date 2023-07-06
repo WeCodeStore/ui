@@ -6,13 +6,14 @@
   margin-top: 20px;
 }
 
-.footer h3 {
+.footer h1 {
   font-family: "Lobster";
   font-weight: bold;
 }
 
-.footer h5 {
+.footer h4 {
   margin-bottom: 10%;
+  text-align: center;
 }
 
 .footer p {
@@ -24,6 +25,10 @@
   text-decoration: none;
   color: #283455;
   margin: 10px 20px;
+}
+
+.footer div p {
+  text-align: center;
 }
 
 .footer-about a::after,
@@ -46,30 +51,34 @@
   transform-origin: bottom left;
 }
 
-.footer-subscription p {
+.footer .footer-subscription p {
   padding: 5px;
-  font-size: x-small;
+  font-size: small;
   font-weight: lighter;
   text-align: left;
+  color: #777777;
 }
 
-.text-muted a {
+.footer .text-muted a {
   margin: 0px;
 }
 
-.social-icons {
-  margin: 20px 10px 20px 10px;
+.footer a .social-icons {
+  font-size: 20px;
+  margin: 2px 1px 2px 1px;
+  text-align: center;
 }
 
 #enter {
   padding: 0 30px;
-  width: 80%;
+  margin-bottom: 10px;
+  width: 225px;
   height: 50px;
   border: 1px solid white;
   border-radius: 20px 0 0 20px;
 }
 
-#clear {
+#submit {
   width: 20%;
   background-color: white;
   height: 50px;
