@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import StarRatings from "./StarRatings";
+import StarRatings from "../components/Stars/StarRatings";
 
 describe("Star Ratings", () => {
   test("Rendering the component should display Stars", () => {
