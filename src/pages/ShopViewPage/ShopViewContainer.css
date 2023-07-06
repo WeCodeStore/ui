@@ -3,12 +3,12 @@
   margin-top: 15px;
   width: 1000px;
   display: grid;
-  gap: 2em;
+  gap: 1.5em;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .shopViewPage-product {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   padding: 20px;
   font-size: 14px;
 }

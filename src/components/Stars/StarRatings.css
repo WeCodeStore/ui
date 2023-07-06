@@ -1,10 +1,11 @@
-.star-rating{
-    display:flex;
-    justify-content: center;
+.star-rating {
+    display: flex;
+    justify-content: left;
     align-items: center;
     margin-top: 10px;
 }
 
-.star-rating span{
+.star-rating-span {
     font-size: 16px;
+    margin-left: 5px;
 }

@@ -1,114 +1,41 @@
-import IProduct from "../../classes/IProduct";
-import Product from "../../components/Product";
+// import IProduct from "../../classes/IProduct";
+import PaginationStepper from "../../components/PaginationStepper/PaginationStepper";
+import Product from "../../components/Product/ProductCard";
 import "./ShopViewContainer.css";
+
+import ProductList from "../../data/MockedData";
+import { useEffect, useState } from "react";
 
 const ShopViewContainer = () => {
   const rating = 4.5;
-  const productList = [
-    new IProduct(
-      1,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "https://www.brooklinen.com/cdn/shop/products/luxe_windowpane_core-sheet-set_silo_768x.progressive.jpg?v=1661448202",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      2,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      3,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      4,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      5,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      6,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      7,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      8,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-    new IProduct(
-      9,
-      "chair",
-      10.5,
-      2,
-      "sdfsdf",
-      "image1.url",
-      "this is a chair",
-      "furniture"
-    ),
-  ];
+  const productList = ProductList;
+
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const pageSelectedHandler = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  useEffect(() => {}, [currentPage, totalPages]);
 
   return (
-    <div className="container-shopView">
-      {productList.map((val, k) => {
-        return (
-          <div className="shopViewPage-product">
-            <a href="#" key={k}>
+    <>
+      <div className="container-shopView">
+        {productList.map((val, k) => {
+          return (
+            <div key={k} className="shopViewPage-product">
               <Product product={val} rating={rating} />
-            </a>
-          </div>
-        );
-      })}
-    </div>
+            </div>
+          );
+        })}
+      </div>
+      <PaginationStepper
+        totalPages={totalPages}
+        currentPage={currentPage}
+        pageSelectedHandler={pageSelectedHandler}
+      />
+    </>
   );
 };
 

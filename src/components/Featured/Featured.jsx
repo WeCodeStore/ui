@@ -1,4 +1,5 @@
 import React from 'react'
+import PaginationStepper from '../PaginationStepper/PaginationStepper';
 import './Featured.css';
 
 const Featured = () => {
