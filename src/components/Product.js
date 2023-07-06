@@ -1,3 +1,5 @@
+import StarRatings from "../components/Stars/StarRatings";
+
 export default function Product({ product, rating }) {
   return (
     <div>
@@ -6,7 +8,7 @@ export default function Product({ product, rating }) {
       <p>{product.image}</p>
       <p>{product.description}</p>
       <p>{product.category}</p>
-      <p>{rating}</p>
+      <StarRatings rate={rating} />
     </div>
   );
 }
