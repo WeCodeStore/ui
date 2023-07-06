@@ -16,7 +16,6 @@ const PageContainer = () => {
           <Route path="/shop" element={<ShopViewContainer />}></Route>
         </Routes>
         <Footer />
-        {/* <ShopViewContainer /> */}
       </div>
     </BrowserRouter>
   );
