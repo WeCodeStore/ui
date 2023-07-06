@@ -15,7 +15,7 @@ export default function Footer() {
       <Container>
         <Row>
           <Col size="md" className="footer-subscription">
-            <h3> Get the Best for Your Home</h3>
+            <h1> Get the Best for Your Home</h1>
             <p> Sign up to know when we launch new products.</p>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
           </Col>
           <Col size="md" className="footer-about">
-            <h5>About</h5>
+            <h4>About</h4>
             <p>
               <a href="#!" className="">
                 About Us
@@ -71,7 +71,7 @@ export default function Footer() {
             </p>
           </Col>
           <Col size="md" className="footer-support">
-            <h5>Support</h5>
+            <h4>Support</h4>
             <p>
               <a href="#!" className="">
                 FAQ
