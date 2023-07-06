@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <PageContainer />
-      <StarRatings rate={4.5} />
     </div>
   );
 }

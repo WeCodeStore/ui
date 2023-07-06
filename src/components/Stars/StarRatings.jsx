@@ -2,10 +2,12 @@
 import ReactStars from 'react-stars';
 import './StarRatings.css';
 
-const StarRatings = ({rate}) =>{
+const StarRatings = ({numStars=5, rate}) =>{
+  //  const numStars = 5;
+
     return (
         <div className='star-rating' data-testid='starRatingId'>
-        <ReactStars  count={5} value={rate} size={24} edit={false}  />
+        <ReactStars  count={numStars} value={rate} size={24} edit={false}  />
         </div>
     )
 }
