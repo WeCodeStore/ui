@@ -1,6 +1,6 @@
 // import IProduct from "../../classes/IProduct";
 import PaginationStepper from "../../components/PaginationStepper/PaginationStepper";
-import Product from "../../components/Product/Product";
+import Product from "../../components/Product/ProductCard";
 import "./ShopViewContainer.css";
 
 import ProductList from "../../data/MockedData";
@@ -24,10 +24,8 @@ const ShopViewContainer = () => {
       <div className="container-shopView">
         {productList.map((val, k) => {
           return (
-            <div className="shopViewPage-product">
-              <a href="#" key={k}>
-                <Product product={val} rating={rating} />
-              </a>
+            <div key={k} className="shopViewPage-product">
+              <Product product={val} rating={rating} />
             </div>
           );
         })}

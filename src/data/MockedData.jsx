@@ -7,7 +7,7 @@ const ProductList = [
       10.5,
       2,
       "sdfsdf",
-      "image1.url",
+      "https://www.brooklinen.com/cdn/shop/products/luxe_windowpane_core-sheet-set_silo_768x.progressive.jpg?v=1661448202",
       "this is a chair",
       "furniture"
     ),
