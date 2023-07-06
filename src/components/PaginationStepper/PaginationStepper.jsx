@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./PaginationStepper.css"
 import Pagination from "react-bootstrap/Pagination";
 
 const PaginationStepper = ({ totalPages, currentPage, pageSelectedHandler }) => {
