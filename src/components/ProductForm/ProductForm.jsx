@@ -16,14 +16,14 @@ export default function ProductForm() {
                 </Typography>
                 <Grid item  container direction="row" spacing={2}>
                 <Grid item  sx={{ textAlign: 'left' }}>
-                <Typography sx={{ cursor: 'pointer' }} variant="body2-medium" >
+                <Typography sx={{ cursor: 'pointer' }} variant="body_roboto" >
                     <Stack spacing={2}>
                         <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
                     </Stack>
                 </Typography>
                 </Grid>
                 <Grid item  sx={{ textAlign: 'left' }}>
-                <Typography sx={{ cursor: 'pointer' }} variant="body2-medium" color="text.secondary" >
+                <Typography sx={{ cursor: 'pointer' }} variant="body_roboto" color="text.secondary" >
                 5555,55 Reviews
                 </Typography>
                 </Grid>
@@ -34,7 +34,7 @@ export default function ProductForm() {
                  </Typography>
                 </Grid>
                 <Grid item>
-                 <Typography variant="body1-medium" color="text.secondary">
+                 <Typography variant="body_roboto" color="text.secondary">
                  Featuring a rich, buttery-smooth weave, our best-selling Luxe Sateen 
                  Sheets are the ultimate bedding upgrade. Perfect for elevating your 
                  sheet game, these sheets feature a luxurious 480 thread count and a 

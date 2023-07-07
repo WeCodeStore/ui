@@ -6,19 +6,15 @@ export const theme = createTheme({
         fontFamily: "Roboto",
         letterSpacing: 0.1,
         lineHeight: 4,
-        fontSize: 12,
+        fontSize: 13,
         fontWeight: 700,
-        margin: 8,
-       
         
       },
-      body2_medium: {
+      body_roboto: {
         fontFamily: "Roboto",
-        letterSpacing: 0.1,
-        lineHeight: 4,
+        fontSize: 13,
         fontWeight: 700,
-        paddingLeft: 40,
-        margin: 8,
+        lineHeight: 1.6,
        
       },
       title1_bold: {
@@ -28,10 +24,7 @@ export const theme = createTheme({
         fontStyle: "bold",
         fontWeight: 700,
         color:"#283455",
-        margin: 8,
-       
-        
-        
+
       },
     }
 }
