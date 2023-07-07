@@ -18,14 +18,6 @@ const PaginationStepper = ({
     pageSelectedHandler(number);
   };
 
-  const handleSwitchToFirstPage = () => {
-    selectPageHandler(1);
-  };
-
-  const handleSwitchToLastPage = () => {
-    selectPageHandler(totalPages);
-  };
-
   const handlePrevious = () => {
     if (active > 0) {
       setActive(active - 1);
@@ -68,7 +60,7 @@ const PaginationStepper = ({
 
     if (!isPageNumberOutOfRange) {
       isPageNumberOutOfRange = true;
-      return <Pagination.Ellipsis key={pageNumber} className="muted" />;
+      return <Pagination.Ellipsis disabled={true} key={pageNumber} className="muted" />;
     }
     return null;
   });
@@ -77,8 +69,7 @@ const PaginationStepper = ({
     <>
       {isPaginationShown && (
         <div className="paginationStepperDiv">
-          <Pagination>
-            <Pagination.First onClick={handleSwitchToFirstPage} />
+          <Pagination size="md">
             <Pagination.Prev
               onClick={handlePrevious}
               disabled={isCurrentPageFirst}
@@ -88,7 +79,6 @@ const PaginationStepper = ({
               onClick={handleNext}
               disabled={isCurrentPageLast}
             />
-            <Pagination.Last onClick={handleSwitchToLastPage} />
           </Pagination>
         </div>
       )}
