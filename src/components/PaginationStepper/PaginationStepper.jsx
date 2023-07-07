@@ -1,29 +1,22 @@
 import { useState } from "react";
-import "./PaginationStepper.css"
+import "./PaginationStepper.css";
 import Pagination from "react-bootstrap/Pagination";
 
-const PaginationStepper = ({ totalPages, currentPage, pageSelectedHandler }) => {
+const PaginationStepper = ({
+  totalPages,
+  currentPage,
+  pageSelectedHandler,
+  alwaysShown = false,
+}) => {
   const [active, setActive] = useState(currentPage);
-  let items = [];
+  const isPaginationShown = alwaysShown ? true : totalPages > 1;
+  const isCurrentPageFirst = currentPage === 1;
+  const isCurrentPageLast = currentPage === totalPages;
 
   const selectPageHandler = (number) => {
     setActive(number);
     pageSelectedHandler(number);
   };
-
-  for (let number = 0; number <= totalPages - 1; number++) {
-    items.push(
-      <Pagination.Item
-        key={number}
-        active={number === active}
-        onClick={() => selectPageHandler(number)}
-        data-testid={`item${number + 1}`}
-        className={`${number === active ? "active" : "paginationStepper"}`}
-      >
-        {number + 1}
-      </Pagination.Item>
-    );
-  }
 
   const handlePrevious = () => {
     if (active > 0) {
@@ -39,17 +32,57 @@ const PaginationStepper = ({ totalPages, currentPage, pageSelectedHandler }) => 
     }
   };
 
+  let isPageNumberOutOfRange;
+
+  const pageNumbers = [...new Array(totalPages)].map((_, index) => {
+    const pageNumber = index + 1;
+    const isPageNumberFirst = pageNumber === 1;
+    const isPageNumberLast = pageNumber === totalPages;
+    const isCurrentPageWithinTwoPageNumbers =
+      Math.abs(pageNumber - currentPage) <= 1;
+
+    if (
+      isPageNumberFirst ||
+      isPageNumberLast ||
+      isCurrentPageWithinTwoPageNumbers
+    ) {
+      isPageNumberOutOfRange = false;
+      return (
+        <Pagination.Item
+          key={pageNumber}
+          onClick={() => selectPageHandler(pageNumber)}
+          active={pageNumber === currentPage}
+        >
+          {pageNumber}
+        </Pagination.Item>
+      );
+    }
+
+    if (!isPageNumberOutOfRange) {
+      isPageNumberOutOfRange = true;
+      return <Pagination.Ellipsis disabled={true} key={pageNumber} className="muted" />;
+    }
+    return null;
+  });
+
   return (
-    <div className="paginationStepperDiv">
-      <Pagination>
-        <Pagination.Prev
-          onClick={handlePrevious}
-          data-testid={"previous-button"}
-        />
-        {items}
-        <Pagination.Next onClick={handleNext} data-testid={"next-button"} />
-      </Pagination>
-    </div>
+    <>
+      {isPaginationShown && (
+        <div className="paginationStepperDiv">
+          <Pagination size="md">
+            <Pagination.Prev
+              onClick={handlePrevious}
+              disabled={isCurrentPageFirst}
+            />
+            {pageNumbers}
+            <Pagination.Next
+              onClick={handleNext}
+              disabled={isCurrentPageLast}
+            />
+          </Pagination>
+        </div>
+      )}
+    </>
   );
 };
 
