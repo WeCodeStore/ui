@@ -39,7 +39,9 @@ export default function SiteHeader() {
         <Toolbar>
         </ Toolbar>
         <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
-          <List>
+          <div className='drawer-wrapper' style={{ width: '650px' }}>
+            <div className='drawer-category'>
+            <List >
             <ListItem button>
               <ListItemText primary="Item 1" />
             </ListItem>
@@ -50,6 +52,10 @@ export default function SiteHeader() {
               <ListItemText primary="Item 3" />
             </ListItem>
           </List>
+            </div>
+          
+          </div>
+         
         </Drawer>
         
         <Toolbar />

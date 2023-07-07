@@ -5,7 +5,7 @@ import { theme } from "./Theme";
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
 import ProductForm from '../../components/ProductForm/ProductForm';
 
-export default function ProductCard() {
+export default function ProductCardPage() {
     return (
         <ThemeProvider theme={theme}> 
         <Grid container spacing={2}>

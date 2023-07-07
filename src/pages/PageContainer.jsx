@@ -3,7 +3,7 @@ import HomeViewComponent from "../pages/HomeViewPage/HomeViewComponent";
 import Footer from "../components/Footer/Footer";
 import SiteHeader from "../components/SiteHeader/SiteHeader";
 import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
-import ProductCard from "./ProductCardPage/ProductCard";
+import ProductCardPage from "./ProductCardPage/ProductCardPage";
 
 
 const PageContainer = () => {
@@ -16,7 +16,7 @@ const PageContainer = () => {
         <Routes>
           <Route path="/" element={<HomeViewComponent />}></Route>
           <Route path="/shop" element={<ShopViewContainer />}></Route>
-          <Route path="/shop/product" element={<ProductCard />}></Route>
+          <Route path="/shop/product" element={<ProductCardPage />}></Route>
         </Routes>
         <Footer />
       </div>
