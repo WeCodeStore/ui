@@ -1,9 +1,9 @@
-import'./Header.css'
+import'./SiteHeader.css'
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Drawer, Box, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 
 
-export default function Header() {
+export default function SiteHeader() {
     const [drawerOpen, setDrawerOpen] = useState(false);
   
     const toggleDrawer = () => {
@@ -36,7 +36,7 @@ export default function Header() {
             </div>
           </Toolbar>
         </AppBar>
-        <Toolbar>s
+        <Toolbar>
         </ Toolbar>
         <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
           <List>

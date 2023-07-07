@@ -6,7 +6,6 @@ header {
     background-color: #eff1f5 !important;
     position: fixed;
     width: 100%;
- 
     z-index: 100;
     
   }
@@ -27,12 +26,12 @@ header {
     margin: 10px 5px;
   }
   .header-button-menu {
-    margin-left: 8rem;
+    margin-left: 2rem;
   }
   .header-seacher {
     display: flex;
     align-items: center;
-    margin-right: 8rem;
+    margin-right: 2rem;
   }
   
   .navbar-user,
