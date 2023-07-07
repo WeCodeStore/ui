@@ -10,7 +10,7 @@ const ShopViewContainer = () => {
   const rating = 4.5;
   const productList = ProductList;
 
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pageSelectedHandler = (pageNumber) => {
