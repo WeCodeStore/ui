@@ -19,7 +19,6 @@ const PageContainer = () => {
           <Route path="/shop/product" element={<ProductCard />}></Route>
         </Routes>
         <Footer />
-        {/* <ShopViewContainer /> */}
       </div>
     </BrowserRouter>
   );

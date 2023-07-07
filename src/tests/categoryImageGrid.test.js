@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import CategoryImageGrid from "./categoryImageGrid";
+import CategoryImageGrid from "../components/Category/categoryImageGrid";
 
 describe("CategoryImageGrid", () => {
   test("Rendering the component should display page title", () => {
