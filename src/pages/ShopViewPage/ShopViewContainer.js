@@ -4,14 +4,14 @@ import Product from "../../components/Product/ProductCard";
 import "./ShopViewContainer.css";
 import { useEffect, useState } from "react";
 
-import { useGetAllProductsPaginatedQuery } from "../../store/apiSlice";
+import { useGetProductsByCategoryPaginatedQuery } from "../../store/apiSlice";
 
 const ShopViewContainer = () => {
   const rating = 4.5;
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data: allProductsPage } = useGetAllProductsPaginatedQuery(
+  const { data: allProductsPage } = useGetProductsByCategoryPaginatedQuery(
     currentPage - 1
   );
 
