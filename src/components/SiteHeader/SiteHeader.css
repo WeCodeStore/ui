@@ -1,0 +1,40 @@
+body{
+margin:10;
+}
+
+header {
+    background-color: #eff1f5 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    
+  }
+  
+  .navbar.navbar {
+    background-color: #eff1f5;
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    
+}
+  a.navbar-brand {
+    font-size:3rem ;
+    font-family:'Lobster',cursive;
+    font-weight: bold;
+    color: #283455;
+    text-decoration:none;
+    margin: 10px 5px;
+  }
+  .header-button-menu {
+    margin-left: 2rem;
+  }
+  .header-seacher {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  
+  .navbar-user,
+  .navbar-cart {
+    display: inline
+  }
