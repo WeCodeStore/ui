@@ -2,8 +2,8 @@
   background-color: #dde3ec;
   color: #283455;
   font-family: "Roboto";
-  padding: 5% 10%;
-  margin-top: 20px;
+  padding: -25px;
+  margin: -25px;
 }
 
 .footer h1 {
@@ -76,12 +76,18 @@
   height: 50px;
   border: 1px solid white;
   border-radius: 20px 0 0 20px;
+  font-size: 12px;
+}
+
+#enter svg {
+  height: 150px;
+  width: 150px;
 }
 
 #submit {
   width: 20%;
   background-color: white;
   height: 50px;
-  border: 1px;
+  border: 1px solid white;
   border-radius: 0 20px 20px 0;
 }

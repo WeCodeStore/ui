@@ -8,6 +8,7 @@ import {
   BsPinterest,
   BsTwitter,
 } from "react-icons/bs";
+import InputGroup from "react-bootstrap/InputGroup";
 
 export default function Footer() {
   return (
@@ -18,39 +19,39 @@ export default function Footer() {
             <h1> Get the Best for Your Home</h1>
             <p> Sign up to know when we launch new products.</p>
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <InputGroup className="mb-3" controlId="formBasicEmail">
                 <input type="text" id="enter" placeholder="Email"></input>
                 <button id="submit" data-testid="submit">
-                  <BsArrowRightShort />
+                  <BsArrowRightShort size={20} />
                 </button>
 
                 <Form.Text className="text-muted">
                   <p>
                     Please keep me up to date with Urban Nest news and offers by
                     email. I can unsubscribe at any time. I have read the Urban
-                    Nest <a href="#!">Privacy Policy </a>
+                    Nest <a href="/privacy-policy">Privacy Policy </a>
                   </p>
                 </Form.Text>
-              </Form.Group>
+              </InputGroup>
             </Form>
 
-            <a href="#!">
+            <a href="https://facebook.com">
               <BsFacebook className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://twitter.com">
               <BsTwitter className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://pinterest.com">
               <BsPinterest className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://instagram.com">
               <BsInstagram className="social-icons" />
             </a>
           </Col>
           <Col size="md" className="footer-about">
             <h4>About</h4>
             <p>
-              <a href="#!" className="">
+              <a href="/about-us" className="">
                 About Us
               </a>
             </p>
@@ -60,12 +61,12 @@ export default function Footer() {
               </a>
             </p>
             <p>
-              <a href="#!" className="">
+              <a href="/our-stores" className="">
                 Our Stores
               </a>
             </p>
             <p>
-              <a href="#!" className="">
+              <a href="/press" className="">
                 Press
               </a>
             </p>
@@ -73,22 +74,22 @@ export default function Footer() {
           <Col size="md" className="footer-support">
             <h4>Support</h4>
             <p>
-              <a href="#!" className="">
+              <a href="/FAQ" className="">
                 FAQ
               </a>
             </p>
             <p>
-              <a href="#!" className="">
+              <a href="/returns-and-exchanges" className="">
                 Returns/Exchanges
               </a>
             </p>
             <p>
-              <a href="#!" className="">
+              <a href="/careers" className="">
                 Careers
               </a>
             </p>
             <p>
-              <a href="#!" className="">
+              <a href="contact-us" className="">
                 Contact Us
               </a>
             </p>
@@ -97,7 +98,7 @@ export default function Footer() {
       </Container>
       <div>
         <p>
-          &copy; Urban Nest 2023<a href="#!">Privacy Policy</a>
+          &copy; Urban Nest 2023<a href="/privacy-policy">Privacy Policy</a>
         </p>
       </div>
     </footer>

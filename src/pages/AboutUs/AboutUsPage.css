@@ -1,0 +1,20 @@
+/* .about-us-page {
+  text-align: center;
+  font-weight: bold;
+  line-height: 21px;
+} */
+
+.about-us-page-image {
+  width: 400px;
+  height: 500px;
+}
+
+.flex-container {
+  display: flex;
+  margin: 10px;
+  /* padding: 20px; */
+}
+
+div {
+  padding: 10px;
+}
