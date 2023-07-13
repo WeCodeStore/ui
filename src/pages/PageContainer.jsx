@@ -5,8 +5,8 @@ import SiteHeader from "../components/SiteHeader/SiteHeader";
 import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
 import ProductCardPage from "./ProductCardPage/ProductCardPage";
 
-
 const PageContainer = () => {
+
   return (
     <BrowserRouter>
       <div className="page-container" data-testid="page-container">
