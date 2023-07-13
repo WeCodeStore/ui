@@ -1,7 +1,7 @@
 import StarRatings from "../Stars/StarRatings";
 import "./ProductCard.css";
 
-export default function Product({ product, rating }) {
+export default function Product({ product }) {
   return (
     <div>
       <a href="">
@@ -17,7 +17,10 @@ export default function Product({ product, rating }) {
       <p className="product-card-p">{product.price}</p>
       <p className="product-card-p">{product.description}</p>
       <p className="product-card-p">{product.category}</p>
-      <StarRatings rate={rating} />
+      <StarRatings
+        rate={product.avgReviewRate}
+        reviews={product.totalReviews}
+      />
     </div>
   );
 }

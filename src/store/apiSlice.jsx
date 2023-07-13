@@ -9,11 +9,17 @@ export const apiSlice = createApi({
       query: () => "/store/products",
     }),
     getProductsByCategoryPaginated: builder.query({
-      query: ({ pageNumber }) =>
-        `/store/products/page?pagenumber=${pageNumber}`,
+      query: ({ categoryId, pageNumber }) =>
+        `/store/products/category/page?categoryId=${categoryId}&pageNumber=${pageNumber}`,
     }),
+    getAllCategories: builder.query({
+        query: () => "/store/categories"
+    })
   }),
 });
 
-export const { useGetAllProductsDataQuery, useGetProductsByCategoryPaginatedQuery } =
-  apiSlice;
+export const {
+  useGetAllProductsDataQuery,
+  useGetProductsByCategoryPaginatedQuery,
+  useGetAllCategoriesQuery
+} = apiSlice;
