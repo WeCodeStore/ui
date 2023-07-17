@@ -5,11 +5,16 @@ import { theme } from "./Theme";
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
 import ProductForm from '../../components/ProductForm/ProductForm';
 import './ProductCardPage.css'
+import { useSelector } from "react-redux";
 
-export default function ProductCardPage() {
+export default function ProductPage() {
+
+    const product = useSelector((state) => state.actions.product);
+    console.log("My product: ", product)
+
     return (
         <div className='product-card-page'>
-        <ThemeProvider theme={theme}> 
+        <ThemeProvider theme={theme}>
         <Grid  className='productCardPage' container spacing={2}>
             <Grid item xs={8}>
             <   ProductGallery />
@@ -20,5 +25,5 @@ export default function ProductCardPage() {
         </Grid>         
         </ThemeProvider>
         </div>
-       
+
     )}

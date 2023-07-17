@@ -2,12 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeViewComponent from "../pages/HomeViewPage/HomeViewComponent";
 import Footer from "../components/Footer/Footer";
 import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
+import ProductPage from "./ProductPage/ProductPage";
 import ProductCardPage from "./ProductCardPage/ProductCardPage";
 import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
 
 
 const PageContainer = () => {
+
   return (
     <BrowserRouter>
       <div className="page-container" data-testid="page-container">
@@ -16,8 +18,8 @@ const PageContainer = () => {
         </div>
         <Routes>
           <Route path="/" element={<HomeViewComponent />}></Route>
-          <Route path="/shop" element={<ShopViewContainer />}></Route>
-          <Route path="/shop/product" element={<ProductCardPage />}></Route>
+          <Route path="/shop/:catId" element={<ShopViewContainer />}></Route>
+          <Route path="/shop/product/:prodId" element={<ProductPage />}></Route>
         </Routes>
         <Footer />
       </div>
