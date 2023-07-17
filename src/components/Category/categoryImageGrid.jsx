@@ -17,9 +17,9 @@ const CategoryImageGrid = () => {
 
   const navigate = useNavigate();
 
-  const handleNavigate = (id) => {
-    dispatch(setCategory(id));
-    navigate(`/shop/categoryId=${id}`);
+  const handleNavigate = (val) => {
+    dispatch(setCategory(val.id));
+    navigate(`/shop/${val.name}`);
   };
 
   return (
@@ -34,7 +34,7 @@ const CategoryImageGrid = () => {
                 src={val.titleImage}
                 className="img"
                 onClick={() => {
-                  handleNavigate(val.id);
+                  handleNavigate(val);
                 }}
               />
             </div>
