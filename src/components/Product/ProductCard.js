@@ -5,7 +5,7 @@ export default function Product({ product }) {
   return (
     <div>
       <img
-        src={product.image}
+        src={product.faceImage}
         style={{ width: "280px", height: "260px", margin: "0 0 10px 0" }}
         className="productImage"
       />
