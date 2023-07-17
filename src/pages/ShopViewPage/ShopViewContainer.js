@@ -2,30 +2,66 @@
 import PaginationStepper from "../../components/PaginationStepper/PaginationStepper";
 import Product from "../../components/Product/ProductCard";
 import "./ShopViewContainer.css";
-
-import ProductList from "../../data/MockedData";
 import { useEffect, useState } from "react";
+import { useGetProductsByCategoryPaginatedQuery } from "../../store/apiSlice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setProduct } from "../../store/actionSlice";
 
 const ShopViewContainer = () => {
-  const rating = 4.5;
-  const productList = ProductList;
-
-  const [totalPages, setTotalPages] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const categoryId = useSelector((state) => state.actions.category);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const pageNumber = currentPage - 1;
+
+  const { data: allProductsPage, isSuccess: success } =
+    useGetProductsByCategoryPaginatedQuery({
+      categoryId,
+      pageNumber,
+    });
+
+  let productList;
+  let pages;
+  if (success) {
+    productList = allProductsPage.products;
+    pages = Math.floor(allProductsPage.totalElements / 9) + 1;
+  } else {
+    productList = [];
+  }
+
+  useEffect(() => {
+    setTotalPages(pages);
+  }, [pages]);
 
   const pageSelectedHandler = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  useEffect(() => {}, [currentPage, totalPages]);
+  const handleNavigate = (val) => {
+    dispatch(setProduct(val));
+    navigate(`/shop/product/${val.name}`);
+  };
 
   return (
     <>
       <div className="container-shopView">
         {productList.map((val, k) => {
           return (
-            <div key={k} className="shopViewPage-product">
-              <Product product={val} rating={rating} />
+            <div
+              key={k}
+              className="shopViewPage-product"
+              onClick={() => {
+                handleNavigate(val);
+              }}
+            >
+              <Product product={val} />
             </div>
           );
         })}

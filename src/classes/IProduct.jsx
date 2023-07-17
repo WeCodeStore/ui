@@ -7,7 +7,9 @@ class IProduct {
     sku,
     image,
     description,
-    category
+    category,
+    avgReviewRate,
+    totalReviews
   ) {
     this.productId = productId;
     this.name = name;
@@ -17,6 +19,8 @@ class IProduct {
     this.image = image;
     this.description = description;
     this.category = category;
+    this.avgReviewRate = avgReviewRate;
+    this.totalReviews = totalReviews;
   }
 }
 

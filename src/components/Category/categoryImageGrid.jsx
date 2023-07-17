@@ -1,55 +1,43 @@
-import { useState } from 'react';
-import './categoryImageGrid.css';
+import "./categoryImageGrid.css";
+import { useGetAllCategoriesQuery } from "../../store/apiSlice";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCategory } from "../../store/actionSlice";
 
 const CategoryImageGrid = () => {
-  const [images, setImages] = useState([
-    {
-      name: 'Shop Bed',
-      src: 'https://i.imgur.com/58rvHxE.jpg',
-      desc: 'This describes this image..',
-    },
-    {
-      name: 'Shop Kitchen',
-      src: 'https://i.imgur.com/S9tQqzv.jpg',
-      desc: 'This describes this image 2..',
-    },
-    {
-      name: 'Shop Toys',
-      src: 'https://i.imgur.com/EJHl7aP.jpg',
-      desc: 'This describes this image 3 ..',
-    },
-    {
-      name: 'Shop Tools',
-      src: 'https://i.imgur.com/g23l9qM.jpg',
-      desc: 'This describes this image 4..',
-    },
-    {
-      name: 'Shop Cloths',
-      src: 'https://i.imgur.com/pg4YTSs.jpg',
-      desc: 'This describes this image 5..',
-    },
-    {
-      name: 'Shop Electronics',
-      src: 'https://i.imgur.com/QoOT1WH.jpg',
-      desc: 'This describes this image 6..',
-    },
-  ]);
-  const [currentImage, setCurrentImage] = useState({});
+  const dispatch = useDispatch();
 
-  // const handleClick = (val) => {
-  //     console.log(val)
-  //     setCurrentImage( val );
-  // }
+  let allCategories;
+  const { data: categories, isSuccess: success } = useGetAllCategoriesQuery();
+  if (success) {
+    allCategories = categories;
+  } else {
+    allCategories = [];
+  }
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (val) => {
+    dispatch(setCategory(val.id));
+    navigate(`/shop/${val.name}`);
+  };
+
   return (
     <>
-      <h3 className='header-category'> Shop By Category</h3>
-      <div className='container-category'>
-        {images.map((val, k) => {
+      <h3 className="header-category"> Shop By Category</h3>
+      <div className="container-category">
+        {allCategories.map((val, k) => {
           return (
-            <a href='#' key={k}>
-              <h6 className='header-category'>{val.name}</h6>
-              <img src={val.src} className='img' onClick={() => {}} />
-            </a>
+            <div key={k}>
+              <h4 className="header-category">{val.name}</h4>
+              <img
+                src={val.titleImage}
+                className="img"
+                onClick={() => {
+                  handleNavigate(val);
+                }}
+              />
+            </div>
           );
         })}
       </div>

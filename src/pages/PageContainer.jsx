@@ -5,8 +5,8 @@ import SiteHeader from "../components/SiteHeader/SiteHeader";
 import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
 import ProductCardPage from "./ProductCardPage/ProductCardPage";
 
-
 const PageContainer = () => {
+
   return (
     <BrowserRouter>
       <div className="page-container" data-testid="page-container">
@@ -15,8 +15,8 @@ const PageContainer = () => {
         </div>
         <Routes>
           <Route path="/" element={<HomeViewComponent />}></Route>
-          <Route path="/shop" element={<ShopViewContainer />}></Route>
-          <Route path="/shop/product" element={<ProductCardPage />}></Route>
+          <Route path="/shop/:catId" element={<ShopViewContainer />}></Route>
+          <Route path="/shop/product/:prodId" element={<ProductCardPage />}></Route>
         </Routes>
         <Footer />
       </div>
