@@ -47,7 +47,7 @@ const ShopViewContainer = () => {
   const handleNavigate = (val) => {
     console.log("Function: ", val);
     dispatch(setProduct(val));
-    navigate("/shop/product");
+    navigate(`/shop/product/productId=${val.productId}`);
   };
 
   return (
