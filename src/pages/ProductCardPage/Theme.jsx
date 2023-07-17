@@ -6,13 +6,13 @@ export const theme = createTheme({
         fontFamily: "Roboto",
         letterSpacing: 0.1,
         lineHeight: 4,
-        fontSize: 13,
+        fontSize: 16,
         fontWeight: 700,
         
       },
       body_roboto: {
         fontFamily: "Roboto",
-        fontSize: 13,
+        fontSize: 16,
         fontWeight: 700,
         lineHeight: 1.6,
        

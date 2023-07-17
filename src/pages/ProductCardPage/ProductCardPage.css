@@ -1,0 +1,11 @@
+.product-card-page {
+  padding-left: 3rem;
+}
+.productCardPage{
+    /* border: 1px solid black; */
+    max-width: 1200px;
+    display: flex;
+    padding: 10px;
+    
+   
+  }
