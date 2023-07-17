@@ -5,12 +5,19 @@ import "./ShopViewContainer.css";
 import { useEffect, useState } from "react";
 import { useGetProductsByCategoryPaginatedQuery } from "../../store/apiSlice";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setProduct } from "../../store/actionSlice";
 
 const ShopViewContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   const categoryId = useSelector((state) => state.actions.category);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const pageNumber = currentPage - 1;
 
@@ -37,12 +44,24 @@ const ShopViewContainer = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleNavigate = (val) => {
+    console.log("Function: ", val);
+    dispatch(setProduct(val));
+    navigate("/shop/product");
+  };
+
   return (
     <>
       <div className="container-shopView">
         {productList.map((val, k) => {
           return (
-            <div key={k} className="shopViewPage-product">
+            <div
+              key={k}
+              className="shopViewPage-product"
+              onClick={() => {
+                handleNavigate(val);
+              }}
+            >
               <Product product={val} />
             </div>
           );
