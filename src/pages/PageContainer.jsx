@@ -3,7 +3,6 @@ import HomeViewComponent from "../pages/HomeViewPage/HomeViewComponent";
 import Footer from "../components/Footer/Footer";
 import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
 import ProductPage from "./ProductPage/ProductPage";
-import ProductCardPage from "./ProductCardPage/ProductCardPage";
 import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
 

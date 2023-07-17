@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme";
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
 import ProductForm from '../../components/ProductForm/ProductForm';
-import './ProductCardPage.css'
+import './ProductPage.css'
 import { useSelector } from "react-redux";
 
 export default function ProductPage() {
