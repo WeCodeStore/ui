@@ -5,7 +5,8 @@ class IProduct {
     price,
     quantity,
     sku,
-    image,
+    faceImage,
+    images,
     description,
     category,
     avgReviewRate,
@@ -16,7 +17,8 @@ class IProduct {
     this.price = price;
     this.quantity = quantity;
     this.sku = sku;
-    this.image = image;
+    this.faceImage = faceImage;
+    this.images = images;
     this.description = description;
     this.category = category;
     this.avgReviewRate = avgReviewRate;
