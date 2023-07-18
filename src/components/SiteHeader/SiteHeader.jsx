@@ -9,12 +9,24 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function SiteHeader() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
+  };
+
+  const nav = useNavigate();
+  const home = () => {
+    nav("/");
+  };
+  const profile = () => {
+    nav("/profile");
+  };
+  const shoppingCart = () => {
+    nav("/shop");
   };
 
   return (
@@ -36,18 +48,23 @@ export default function SiteHeader() {
             </IconButton>
           </div>
           <div>
-            <a className="navbar-brand" href="#">
+            <p className="navbar-brand" onClick={home}>
               Urban Nest
-            </a>
+            </p>
           </div>
           <div className="header-seacher">
-            <a className="navbar-user" href="#/account"></a>
+            <p className="navbar-user"></p>
             <img
               src="https://cdn.shopify.com/s/files/1/0951/7126/files/account.svg?v=1653421420"
               alt="User"
+              onClick={profile}
             />
-            <a className="navbar-cart" href="#"></a>
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIHN0cm9rZT0iIzI4MzQ1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik02LjY5NSAyMS4yNUw1LjgxIDkuNzVoMTIuMzhsLS44ODUgMTEuNUg2LjY5NXoiLz4KICAgIDxwYXRoIHN0cm9rZT0iIzI4MzQ1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNSAxMlY4YzAtMS42NTctMS4zNDMtMy0zLTN2MGMtMS42NTcgMC0zIDEuMzQzLTMgM3Y0Ii8+Cjwvc3ZnPgo=" />
+            <p className="navbar-cart"></p>
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIHN0cm9rZT0iIzI4MzQ1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik02LjY5NSAyMS4yNUw1LjgxIDkuNzVoMTIuMzhsLS44ODUgMTEuNUg2LjY5NXoiLz4KICAgIDxwYXRoIHN0cm9rZT0iIzI4MzQ1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNSAxMlY4YzAtMS42NTctMS4zNDMtMy0zLTN2MGMtMS42NTcgMC0zIDEuMzQzLTMgM3Y0Ii8+Cjwvc3ZnPgo="
+              onClick={shoppingCart}
+              alt="cart"
+            />
           </div>
         </Toolbar>
       </AppBar>

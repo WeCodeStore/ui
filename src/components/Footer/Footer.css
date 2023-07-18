@@ -20,6 +20,13 @@
   font-size: small;
 }
 
+.footer-about p:hover,
+.footer-support p:hover,
+.footer-subscription span:hover,
+.copyright span:hover {
+  cursor: pointer;
+}
+
 .footer a {
   position: relative;
   text-decoration: none;
@@ -27,12 +34,20 @@
   margin: 10px 20px;
 }
 
+/* .footer-about p,
+.footer-support p {
+  position: relative;
+  text-decoration: none;
+  color: #283455;
+  margin: 10px 20px;
+} */
+
 .footer div p {
   text-align: center;
 }
 
-.footer-about a::after,
-.footer-support a::after {
+.footer-about p::after,
+.footer-support p::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -45,8 +60,8 @@
   transition: transform 0.35s ease-out;
 }
 
-.footer-about a:hover::after,
-.footer-support a:hover::after {
+.footer-about p:hover::after,
+.footer-support p:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -79,9 +94,10 @@
 }
 
 #submit {
-  width: 20%;
+  width: 50px;
   background-color: white;
   height: 50px;
-  border: 1px;
+  border: 1px solid white;
   border-radius: 0 20px 20px 0;
+  vertical-align: 0.8px;
 }
