@@ -1,0 +1,17 @@
+.h-2 {
+    margin-bottom: 2rem;
+    list-style-type: none;
+    
+}
+
+.offcanvas-a {
+    font-size: 40px;
+    line-height: 46px;
+    color: #283455;
+    font-family: "ToledoTS";
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+ 
+    
+}

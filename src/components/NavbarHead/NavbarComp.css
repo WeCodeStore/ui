@@ -1,7 +1,4 @@
-/* .body{
-    margin:10;
-    }
-  */
+
     
       .navbar.navbar {
      /* border: 1px solid black;  */
@@ -10,23 +7,21 @@
         display:flex;
         justify-content:space-between;
         padding:20px;
-        margin: 0px 0px 5px 0px; 
-        
+        margin: 0px 0px 5px 0px;      
     }
       a.navbar-brand {
-        font-size:3rem ;
+        font-size: 3rem ;
         font-family:'Lobster',cursive;
         font-weight: bold;
         color: #283455;
         text-decoration:none;
+        cursor: pointer;
         margin: 1rem 3rem;
       }
-      button.btn-primary {
-        color: #fff;
-        background-color: #fafbfd;
-        border-color: #fafbfd;
-    }
       
+      .custom-button:focus {
+        outline: none;   
+      }
       .header-seacher {
         display: flex;
         align-items: center;
@@ -35,7 +30,6 @@
       
       .navbar-user,
       .navbar-cart {
-        display: inline
-        
+        display: inline    
       }
     
