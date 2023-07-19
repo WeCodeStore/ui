@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
+import './ProductGallery.css'
 
 const Img = styled('img')({
     margin: 'auto',
@@ -11,7 +12,7 @@ const Img = styled('img')({
 export default function ProductGallery() {
     return (
        
-        <Grid className='productGallery' >
+        <Grid className='productGallery' data-testid="product-gallery" >
                     <Grid item  container direction="row" spacing={2}>
                     <Grid item container direction="column" spacing={2} xs={3} >
                         <Grid item >
