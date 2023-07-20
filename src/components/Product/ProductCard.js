@@ -41,7 +41,7 @@ export default function Product({ product }) {
     >
       <img
         src={product.faceImage}
-        style={{ width: "280px", height: "260px", margin: "0 0 10px 0" }}
+        style={{ width: "100%", height: "405px", margin: "0 0 10px 0" }}
         className="productImage"
         onClick={handle}
         alt="product"
