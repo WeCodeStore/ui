@@ -1,9 +1,21 @@
+.ProductCard {
+  & .star-rating {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .product-card-p {
-    margin-left: 3px !important;
+  margin: 0;
+  text-align: center;
 }
 
 .productImage {
-    object-fit: cover;
-    height: 90%;
-    width: 100%;
+  object-fit: cover;
+  height: 90%;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

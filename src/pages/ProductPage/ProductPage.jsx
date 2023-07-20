@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import StarRatings from '../../components/Stars/StarRatings';
 import { useSelector } from 'react-redux';
 import { FaChevronRight } from 'react-icons/fa';
@@ -7,18 +7,18 @@ import './ProductPage.css';
 
 export default function ProductPage() {
   const product = useSelector((state) => state.actions.product);
-  const [reviews, setReviews] = useState([]);
+  const reviews = useRef([]);
   const [currentImage, setCurrentImage] = useState(product.images[0]);
   const [showReviews, setShowReviews] = useState(false);
-  console.log('My product: ', product);
 
   const getReviews = async () => {
-    const data = await fetch(
-      `http://localhost:8080/store/reviews/product/${product.productId}`
-    ).then((res) => res.json());
-    setReviews(data);
+    if (product.totalReviews > 0) {
+      const data = await fetch(
+        `http://localhost:8080/store/reviews/product/${product.productId}`
+      ).then((res) => res.json());
+      reviews.current = data;
+    }
     setShowReviews(!showReviews);
-    console.log(reviews);
   };
 
   const selectImage = (e) => {
@@ -111,13 +111,19 @@ export default function ProductPage() {
           />
         </h3>
         <div className={showReviews ? 'reviews-container' : 'hide'}>
-          {reviews.map((review, idx) => (
-            <div className='review-row'>
-              <p className='user'>{review.userId} User</p>
-              <p className='comment'>{review.comment}</p>
-              <StarRatings rate={review.rating} />
+          {reviews.current.length > 0 ? (
+            reviews.current.map((review, idx) => (
+              <div key={idx} className='review-row'>
+                <p className='user'>{review.userId} User</p>
+                <p className='comment'>{review.comment}</p>
+                <StarRatings rate={review.rating} />
+              </div>
+            ))
+          ) : (
+            <div className='empty-row'>
+              <p>There are no reviews...</p>
             </div>
-          ))}
+          )}
         </div>
         <p></p>
       </div>
