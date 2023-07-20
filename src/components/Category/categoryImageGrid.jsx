@@ -36,6 +36,7 @@ const CategoryImageGrid = () => {
                 onClick={() => {
                   handleNavigate(val);
                 }}
+                alt="category"
               />
             </div>
           );

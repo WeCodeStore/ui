@@ -1,13 +1,13 @@
-import ReactStars from 'react-stars';
-import './StarRatings.css';
+import ReactStars from "react-stars";
+import "./StarRatings.css";
 
 const StarRatings = (props) => {
-  const { numStars = 5, rate, reviews } = props;
+  const { numStars = 5, rate, reviews = 0 } = props;
 
   return (
-    <div className='star-rating' data-testid='starRatingId'>
+    <div className="star-rating" data-testid="starRatingId">
       <ReactStars count={numStars} value={rate} size={24} edit={false} />
-      <span className='star-rating-span'>{reviews ? `(${reviews})` : ''}</span>
+      <span className="star-rating-span">{reviews ? `(${reviews})` : ""}</span>
     </div>
   );
 };
