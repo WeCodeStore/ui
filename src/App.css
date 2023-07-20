@@ -6,7 +6,7 @@
 
 body {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .button {
@@ -22,4 +22,15 @@ body {
 .button-white:hover {
   background: rgb(40, 52, 85);
   color: white;
+}
+
+.button-blue {
+  background: rgb(40, 52, 85);
+  border: 1px solid rgb(40, 52, 85);
+  color: white;
+}
+
+.button-blue:hover {
+  background: white;
+  color: rgb(40, 52, 85);
 }
