@@ -1,7 +1,25 @@
 import {  Offcanvas } from "react-bootstrap";
-import './SideBar.css'
+import './SideBar.css';
+import { useDispatch } from "react-redux";
+import { useGetAllCategoriesQuery } from "../../store/apiSlice";
+import { setCategory } from "../../store/actionSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function SideBar({ show, onHide })  {
+    const dispatch = useDispatch();
+    const nav = useNavigate();
+
+    let allCategories;
+    const { data: categories, isSuccess: success } = useGetAllCategoriesQuery();
+    if (success) {
+      allCategories = categories;
+    } else {
+      allCategories = [];
+    }
+    const handleNavigate = (val) => {
+        dispatch(setCategory(val.id));
+        nav(`/shop/${val.name}`);
+      };
    
     return (
      <div>
@@ -11,28 +29,17 @@ export default function SideBar({ show, onHide })  {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <div className="offcanvas-content">
-                    <ul>
-                        <li class='h-2'>
-                            <a href="#!" data-nav-id="Bed" class="offcanvas-a">
-                               Bed
-                            </a>
-                        </li>
-                        <li class='h-2'>
-                            <a href="#home"class="offcanvas-a" >
-                                Bath
-                            </a>
-                        </li>
-                        <li class='h-2'>
-                            <a href="#" class="offcanvas-a">
-                                Home
-                            </a>
-                        </li>
-                        <li class='h-2'>
-                            <a href="#" class="offcanvas-a">
-                                New Arrivals
-                            </a>
-                        </li>
-                    </ul> 
+                {allCategories.map((val, k) => {
+                    return (
+                        <div key={k} className="h-2">
+                            <h4 className="menu-category" 
+                            onClick={() => {handleNavigate(val)}}>
+                             {val.name}
+                             </h4>
+                        </div>
+                    )}
+                )
+            }      
                 </div>
             </Offcanvas.Body>
        </Offcanvas>
