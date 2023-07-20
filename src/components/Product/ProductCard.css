@@ -1,3 +1,9 @@
 .product-card-p {
     margin-left: 3px !important;
 }
+
+.productImage {
+    object-fit: cover;
+    height: 90%;
+    width: 100%;
+}
