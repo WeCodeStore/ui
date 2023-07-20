@@ -8,8 +8,38 @@ import {
   BsPinterest,
   BsTwitter,
 } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const nav = useNavigate();
+  const about = () => {
+    nav("/about");
+  };
+  const careers = () => {
+    nav("/careers");
+  };
+  const contact = () => {
+    nav("/contact");
+  };
+  const FAQ = () => {
+    nav("/FAQ");
+  };
+  const ourStores = () => {
+    nav("/our-stores");
+  };
+  const press = () => {
+    nav("/press");
+  };
+  const returns = () => {
+    nav("/returns-and-exchanges");
+  };
+  const reviews = () => {
+    nav("/reviews");
+  };
+  const privacy = () => {
+    nav("/privacy-policy");
+  };
+
   return (
     <footer className="footer" data-testid="footer">
       <Container>
@@ -21,83 +51,67 @@ export default function Footer() {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <input type="text" id="enter" placeholder="Email"></input>
                 <button id="submit" data-testid="submit">
-                  <BsArrowRightShort />
+                  <BsArrowRightShort size={16} />
                 </button>
 
                 <Form.Text className="text-muted">
                   <p>
                     Please keep me up to date with Urban Nest news and offers by
                     email. I can unsubscribe at any time. I have read the Urban
-                    Nest <a href="#!">Privacy Policy </a>
+                    Nest <span onClick={privacy}>Privacy Policy </span>
                   </p>
                 </Form.Text>
               </Form.Group>
             </Form>
 
-            <a href="#!">
+            <a href="https://facebook.com">
               <BsFacebook className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://twitter.com">
               <BsTwitter className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://pinterest.com">
               <BsPinterest className="social-icons" />
             </a>
-            <a href="#!">
+            <a href="https://instagram.com">
               <BsInstagram className="social-icons" />
             </a>
           </Col>
           <Col size="md" className="footer-about">
             <h4>About</h4>
             <p>
-              <a href="#!" className="">
-                About Us
-              </a>
+              <p onClick={about}>About Us</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Reviews
-              </a>
+              <p onClick={reviews}>Reviews</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Our Stores
-              </a>
+              <p onClick={ourStores}>Our Stores</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Press
-              </a>
+              <p onClick={press}>Press</p>
             </p>
           </Col>
           <Col size="md" className="footer-support">
             <h4>Support</h4>
             <p>
-              <a href="#!" className="">
-                FAQ
-              </a>
+              <p onClick={FAQ}>FAQ</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Returns/Exchanges
-              </a>
+              <p onClick={returns}>Returns/Exchanges</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Careers
-              </a>
+              <p onClick={careers}>Careers</p>
             </p>
             <p>
-              <a href="#!" className="">
-                Contact Us
-              </a>
+              <p onClick={contact}>Contact Us</p>
             </p>
           </Col>
         </Row>
       </Container>
-      <div>
+      <div className="copyright">
         <p>
-          &copy; Urban Nest 2023<a href="#!">Privacy Policy</a>
+          &copy; Urban Nest 2023<span onClick={privacy}> Privacy Policy</span>
         </p>
       </div>
     </footer>
