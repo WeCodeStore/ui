@@ -26,7 +26,7 @@ export default function SiteHeader() {
     nav("/profile");
   };
   const shoppingCart = () => {
-    nav("/shop");
+    nav("/cart");
   };
 
   return (
