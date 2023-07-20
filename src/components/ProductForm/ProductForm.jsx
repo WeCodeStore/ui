@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Rating from '@mui/material/Rating';
-import Stack from '@mui/material/Stack';
+import StarRatings from '../Stars/StarRatings';
+import "./ProductForm.css";
 
 
 export default function ProductForm() {
     return (
-        <div className='productForm'>
+        <div className='productForm' data-testid="product-form">
         <Grid  container direction="column" >
              <Grid item  sx={{ textAlign: 'left' }}>
                 <Typography variant="title1_bold"   >
@@ -16,18 +15,10 @@ export default function ProductForm() {
                 </Typography>
                 <Grid item  container direction="row" spacing={2}>
                 <Grid item  sx={{ textAlign: 'left' }}>
-                <Typography sx={{ cursor: 'pointer' }} variant="body_roboto" >
-                    <Stack spacing={2}>
-                        <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
-                    </Stack>
-                </Typography>
+                < StarRatings/>
                 </Grid>
-                <Grid item  sx={{ textAlign: 'left' }}>
-                <Typography sx={{ cursor: 'pointer' }} variant="body_roboto" color="text.secondary" >
-                5555,55 Reviews
-                </Typography>
-                </Grid>
-                </Grid>
+                </Grid> 
+                {/* </Grid> */}
                 <Grid item>
                 <Typography variant="body1_medium" color="text.secondary">
                 From $456
