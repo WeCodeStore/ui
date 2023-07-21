@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Navbar, Container, Offcanvas } from "react-bootstrap";
+import { Navbar} from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import "./NavbarComp.css";
 import { useNavigate } from "react-router-dom";
@@ -7,10 +7,11 @@ import SideBar from "../SideBar/SideBar";
 
 
 
+
 export default function NavbarComp()  {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     const nav = useNavigate();
+    
     const home = () => {
       nav("/");
     };
@@ -20,24 +21,27 @@ export default function NavbarComp()  {
     const shoppingCart = () => {
       nav("/shop");
     };
-    
+
     const toggleDrawer = () => {
       setDrawerOpen(!drawerOpen);
     };
+
     return (
    <div className='navbar navbar'>
       <Navbar fixed="top" >
-        <Container>
-        <Button 
-              variant="link" 
-              className="link custom-button"  
-              aria-label="menu"  
-              onClick={toggleDrawer}  >
-                <span class="navbar-toggler-menu"></span>
-                 <img src="https://cdn.shopify.com/s/files/1/0951/7126/files/menu.svg?v=1653421355"
-                 alt="Toggle navigation"  
-                 />
-           </Button>
+        <div className="container-navbar">
+          <div class="btn-custom-button">
+             <Button 
+                variant="link" 
+                className="link custom-button"  
+                aria-label="menu"  
+                onClick={toggleDrawer}  >
+                  <span class="navbar-toggler-menu"></span>
+                  <img src="https://cdn.shopify.com/s/files/1/0951/7126/files/menu.svg?v=1653421355"
+                  alt="Toggle navigation"  
+                  />
+              </Button>
+            </div>
           <Navbar.Brand >
             <a className="navbar-brand" onClick={home} >Urban Nest</a>
             
@@ -52,7 +56,7 @@ export default function NavbarComp()  {
               alt="Cart"
               onClick={shoppingCart}/>
         </div>
-        </Container>
+        </div>
       </Navbar>
       <SideBar show={drawerOpen} onHide={() => setDrawerOpen(false)} />     
 </div>
