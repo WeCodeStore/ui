@@ -1,4 +1,4 @@
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from 'firebase/auth';
+/*import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from 'firebase/auth';
 import {auth} from "./config";
 
 const userRegister= async (user) =>{
@@ -33,4 +33,4 @@ const userLogin=  (user) =>{
     });
 }
 
-export {userRegister, userLogin};
+export {userRegister, userLogin}; */

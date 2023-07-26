@@ -1,15 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from 'firebase/auth';
+import userService from'../services/userService';
 import {auth} from '../firebaseConfig/config';
 
 export const registerUser = createAsyncThunk(
     'auth/register',
-    async (registerUser, {rejectWithValue}) => {
+    async (regUser, {rejectWithValue}) => {
         try {
-                const data = await createUserWithEmailAndPassword(auth, registerUser.email, registerUser.password);
-               
+                const data = await createUserWithEmailAndPassword(auth, regUser.email, regUser.password);
+                const userTemp ={firstName: regUser.firstName, lastName:regUser.lastName, profilePicture:regUser.profilePicture, email:regUser.emai};
+             //   const res = await userService.createUser(userTemp);
+                
+                //{firstName: loginUser.firstName, lastName:loginUser.lastName, profilePicture:loginUser.profilePicture, email:loginUser.email}
                 const responseUser ={
-                    user: {firstName: registerUser.firstName, lastName:registerUser.lastName, profilePicture:registerUser.profilePicture, email:registerUser.email},
+                   // user: res,
+                    user: userTemp,
                     idToken: data._tokenResponse.idToken,
                     refreshToken: data._tokenResponse.refreshToken,
                     expireson: data._tokenResponse.expiresIn
@@ -19,10 +24,7 @@ export const registerUser = createAsyncThunk(
                 return responseUser;
         }
         catch (error ) {
-           console.log('error is ' + JSON.stringify(registerErrorMapping(error.customData._tokenResponse.error)));
-           let errorMessage = '6';
-
-         
+          // console.log('error is ' + JSON.stringify(registerErrorMapping(error.customData._tokenResponse.error)));
            return rejectWithValue(registerErrorMapping(error.customData._tokenResponse.error));
         }
     }
@@ -30,23 +32,24 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
     'auth/login',
-    async (loginUser, {rejectWithValue}) => {
+    async (user, {rejectWithValue}) => {
         try {
-                const data = await signInWithEmailAndPassword(auth, loginUser.email, loginUser.password);
-
+                const data = await signInWithEmailAndPassword(auth, user.email, user.password);
+               
+                //const res = await userService.getUser(user.email);
                 const responseUser ={
-                    user: {firstName: loginUser.firstName, lastName:loginUser.lastName, profilePicture:loginUser.profilePicture, email:loginUser.email},
+                    user: {firstName: user.firstName, lastName:user.lastName, profilePicture:user.profilePicture, email:user.email},
+                  //  user:res,
                     idToken: data._tokenResponse.idToken,
                     refreshToken: data._tokenResponse.refreshToken,
                     expireson: data._tokenResponse.expiresIn
                 }
-
                 
-               // console.log('repponseUser is ' + JSON.stringify(responseUser));
+              // console.log('repponseUser is ' + JSON.stringify(responseUser));
                 return responseUser;
         }
         catch (error ) {
-         //  console.log('error is ' + JSON.stringify(loginErrorMapping(error)));
+            //console.log('error is ' + JSON.stringify(loginErrorMapping(error)));
            return rejectWithValue(loginErrorMapping(error));
         }
     }
