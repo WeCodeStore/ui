@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
 import StarRatings from '../../components/Stars/StarRatings';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 import './ProductPage.css';
+import { addItemToCart } from '../../store/cartSlice';
 
 export default function ProductPage() {
+  const dispatch = useDispatch();
   const product = useSelector((state) => state.actions.product);
   const reviews = useRef([]);
   const [currentImage, setCurrentImage] = useState(product.images[0]);
@@ -32,6 +34,10 @@ export default function ProductPage() {
       getReviews();
     }
   };
+
+  const addToCart = () => {
+    dispatch(addItemToCart(product))
+  }
 
   return (
     <div className='ProductPage'>
@@ -71,7 +77,7 @@ export default function ProductPage() {
           <p className='product-container--description'>
             {product.description}
           </p>
-          <button className='button button-blue'>Add to Cart</button>
+          <button className='button button-blue' onClick={addToCart}>Add to Cart</button>
           <div className='product-details'>
             <div className='product-details--menu'>
               <h6>Details</h6>
