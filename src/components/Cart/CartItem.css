@@ -66,6 +66,9 @@
 .cart-quantity-button-subtract{
     background-color: #f2cb88;
 }
+.cart-quantity-button-subtract:disabled{
+    background-color: #E5E4E2;
+}
 .cart-quantity-button-add{
     background-color:#c2f2cf;
 }

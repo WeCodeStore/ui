@@ -18,11 +18,9 @@ export default function NavbarComp() {
     nav("/profile");
   };
   const openCartModal = () => {
-    console.log("OPEN");
     setCartVisibility(true);
   };
   const closeCartModal = () => {
-    console.log("CLOSE");
     setCartVisibility(false);
   };
 

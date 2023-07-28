@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import StarRatings from '../../components/Stars/StarRatings';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaChevronRight } from 'react-icons/fa';
@@ -10,9 +10,12 @@ export default function ProductPage() {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.actions.product);
   const reviews = useRef([]);
+  const imageRef = useRef(product.images[0]);
   const [currentImage, setCurrentImage] = useState(product.images[0]);
   const [showReviews, setShowReviews] = useState(false);
 
+  const cartQ = 1;
+  
   const getReviews = async () => {
     if (product.totalReviews > 0) {
       const data = await fetch(
@@ -36,7 +39,7 @@ export default function ProductPage() {
   };
 
   const addToCart = () => {
-    dispatch(addItemToCart(product))
+    dispatch(addItemToCart([product, cartQ]))
   }
 
   return (
