@@ -1,7 +1,7 @@
 import "./categoryImageGrid.css";
 import { useGetAllCategoriesQuery } from "../../store/apiSlice";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setCategory } from "../../store/actionSlice";
 
 const CategoryImageGrid = () => {
@@ -22,8 +22,6 @@ const CategoryImageGrid = () => {
     navigate(`/shop/${val.name}`);
   };
 
-   const user = useSelector((state) => state.auth);
-   console.log("user in Category is " + JSON.stringify(user));
   return (
     <>
       <h3 className="header-category"> Shop By Category</h3>

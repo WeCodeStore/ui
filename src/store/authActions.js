@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from 'firebase/auth';
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword , database } from 'firebase/auth';
 import userService from'../services/userService';
 import {auth} from '../firebaseConfig/config';
 
@@ -8,23 +8,25 @@ export const registerUser = createAsyncThunk(
     async (regUser, {rejectWithValue}) => {
         try {
                 const data = await createUserWithEmailAndPassword(auth, regUser.email, regUser.password);
-                const userTemp ={firstName: regUser.firstName, lastName:regUser.lastName, profilePicture:regUser.profilePicture, email:regUser.emai};
-             //   const res = await userService.createUser(userTemp);
-                
-                //{firstName: loginUser.firstName, lastName:loginUser.lastName, profilePicture:loginUser.profilePicture, email:loginUser.email}
+                //Removing password field from the user object.
+                const {password, ...userTemp} = regUser;
+
+                const res = await userService.registerUser(userTemp);
+                if (res.status != 201){
+                    const curUser=auth.currentUser;
+                    curUser.delete().then(()=>{}).catch((error)=>{console.error("Eror deleting user")});
+                    return rejectWithValue("Error server issue");
+                }
                 const responseUser ={
-                   // user: res,
-                    user: userTemp,
+                    user: res.config.data,
                     idToken: data._tokenResponse.idToken,
                     refreshToken: data._tokenResponse.refreshToken,
                     expireson: data._tokenResponse.expiresIn
                 }
 
-              //  console.log('repponseUser is ' + JSON.stringify(responseUser));
                 return responseUser;
         }
         catch (error ) {
-          // console.log('error is ' + JSON.stringify(registerErrorMapping(error.customData._tokenResponse.error)));
            return rejectWithValue(registerErrorMapping(error.customData._tokenResponse.error));
         }
     }
@@ -33,23 +35,28 @@ export const registerUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
     'auth/login',
     async (user, {rejectWithValue}) => {
+        let userRes =null;
         try {
-                const data = await signInWithEmailAndPassword(auth, user.email, user.password);
-               
-                //const res = await userService.getUser(user.email);
-                const responseUser ={
-                    user: {firstName: user.firstName, lastName:user.lastName, profilePicture:user.profilePicture, email:user.email},
-                  //  user:res,
-                    idToken: data._tokenResponse.idToken,
-                    refreshToken: data._tokenResponse.refreshToken,
-                    expireson: data._tokenResponse.expiresIn
-                }
+                userRes = await userService.loginUser(user.email);
+        }catch(error){
+            return rejectWithValue("Error server issue");
+        }
+        try{     
+                if (userRes?.status == 200){
+                   const data = await signInWithEmailAndPassword(auth, user.email, user.password);
+                   const responseUser ={  
+                      user:userRes.data,
+                      idToken: data._tokenResponse.idToken,
+                      refreshToken: data._tokenResponse.refreshToken,
+                      expireson: data._tokenResponse.expiresIn
+                    }
                 
-              // console.log('repponseUser is ' + JSON.stringify(responseUser));
-                return responseUser;
+                    return responseUser;
+                } else {
+                    return rejectWithValue("User not found");
+                }
         }
         catch (error ) {
-            //console.log('error is ' + JSON.stringify(loginErrorMapping(error)));
            return rejectWithValue(loginErrorMapping(error));
         }
     }
@@ -81,9 +88,9 @@ const loginErrorMapping = (error) =>{
     let returnError = {code:400, message:''};
     
     if (error.code === 'auth/wrong-password'){
-        returnError.message = 'Invalid password';
+        returnError.message = 'Invalid login credentials';
     } else if (error.code === 'auth/user-not-found'){
-        returnError.message = 'Invalid email';
+        returnError.message = 'Invalid login credentials';
     } else if (error.code === 'auth/user-disabled'){
         returnError.message = 'Account disabled';
     } 

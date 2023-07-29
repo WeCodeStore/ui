@@ -1,15 +1,15 @@
 import api from './apiSetup';
 
 class  userService  {
-     createUser(data){
-        return api.post ("/store/user", data);
+     registerUser(data){
+        return api.post ('/store/register', data);
      }
-     getUser(email){
-        return api.get(`/store/user/${email}`);
+     loginUser(user){
+        return api.post('/store/login', user);
      }
 
      getAllUser(){
-      return api.get('/store/user');
+      return api.get('/store/users');
    }
 }
 

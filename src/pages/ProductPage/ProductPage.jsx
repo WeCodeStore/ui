@@ -3,6 +3,7 @@ import StarRatings from '../../components/Stars/StarRatings';
 import { useSelector } from 'react-redux';
 import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import Alert from '../../components/Alert/customAlert';
 import './ProductPage.css';
 
 export default function ProductPage() {
@@ -33,6 +34,8 @@ export default function ProductPage() {
     }
   };
 
+  const alert = product.quantity <= 10? <Alert type='warning' message={`Only ${product.quantity} left!`} /> : null;
+  
   return (
     <div className='ProductPage'>
       <div className='product-container'>
@@ -68,6 +71,7 @@ export default function ProductPage() {
           <p className='product-container--price'>{`$${product.price.toFixed(
             2
           )}`}</p>
+          {alert}
           <p className='product-container--description'>
             {product.description}
           </p>
