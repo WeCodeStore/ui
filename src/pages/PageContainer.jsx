@@ -7,7 +7,6 @@ import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
 import LoginPage from "./LoginPage/LoginPage";
 
-
 const PageContainer = () => {
 
   return (

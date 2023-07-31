@@ -1,0 +1,60 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { createUser, retrieveUser, allUser} from './userAction';
+
+const initialState = {
+    user: {}, 
+    loading: false,
+    error: null,
+    success: false
+}
+
+const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    extraReducers: {
+       /* [createUser.pending]: (state) => {
+          state.loading = true
+          state.error = null
+        },
+        [createUser.fulfilled]: (state, { payload }) => {
+          state.loading = false
+          state.success = true 
+          state.user = payload
+        },
+        [createUser.rejected]: (state, { payload }) => {
+          state.loading = false
+          state.error = payload
+        },
+
+        [retrieveUser.pending]: (state) => {
+            state.loading = true
+            state.error = null
+        },
+        [retrieveUser.fulfilled]: (state, { payload }) => {
+            state.loading = false
+            state.success = true 
+            state.user = payload
+        },
+        [retrieveUser.rejected]: (state, { payload }) => {
+            state.loading = false
+            state.error = payload
+        },  */
+
+
+        [allUser.pending]: (state) => {
+          state.loading = true
+          state.error = null
+        },
+        [allUser.fulfilled]: (state, { payload }) => {
+          state.loading = false
+          state.success = true 
+          state.user = payload
+        },
+        [allUser.rejected]: (state, { payload }) => {
+          state.loading = false
+          state.error = payload
+        },
+    },
+});
+  
+export default userSlice.reducer
