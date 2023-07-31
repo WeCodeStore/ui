@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
-import StarRatings from "../../components/Stars/StarRatings";
-import { useSelector, useDispatch } from "react-redux";
-import { FaChevronRight } from "react-icons/fa";
-import { Link } from "react-scroll";
-import "./ProductPage.css";
+import React, { useState, useRef } from 'react';
+import StarRatings from '../../components/Stars/StarRatings';
+import { useDispatch, useSelector } from 'react-redux';
+import { FaChevronRight } from 'react-icons/fa';
+import { Link } from 'react-scroll';
+import Alert from '../../components/Alert/customAlert';
 import { addItemToCart } from "../../store/cartSlice";
+import './ProductPage.css';
 
 export default function ProductPage() {
   const dispatch = useDispatch();
@@ -41,6 +42,8 @@ export default function ProductPage() {
     dispatch(addItemToCart([product, cartQ]));
   };
 
+  const alert = product.quantity <= 10? <Alert type='warning' message={`Only ${product.quantity} left!`} /> : null;
+  
   return (
     <div className="ProductPage">
       <div className="product-container">
@@ -76,7 +79,8 @@ export default function ProductPage() {
           <p className="product-container--price">{`$${product.price.toFixed(
             2
           )}`}</p>
-          <p className="product-container--description">
+          {alert}
+          <p className='product-container--description'>
             {product.description}
           </p>
           <button className="button button-blue" onClick={addToCart}>
