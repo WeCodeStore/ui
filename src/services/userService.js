@@ -1,6 +1,6 @@
-import {axiosUser} from './ApiSetup';
+import {axiosUser} from './apiSetup';
 
-class  UserService  {
+class UserService  {
      registerUser(data){
         return axiosUser.post ('/store/register', data);
      }

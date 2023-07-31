@@ -1,0 +1,60 @@
+.offcanvas.offcanvas-end.show {
+  width: 600px;
+  background-color: gainsboro;
+}
+.offcanvas-title.h5 {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.offcanvas-header .btn-close {
+  margin-right: 5px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 5px !important;
+  border: 1px solid grey;
+  line-height: 0px;
+  font-weight: 500;
+}
+
+.offcanvas-header .btn-close:hover {
+  background-color: #ed4a4a;
+}
+ 
+.canvas-cart-header-title {
+  width: 100%;
+}
+.cart-checkout-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cart-total-price-div {
+  width: 100%;
+  display: flex;
+  height: 40px;
+  margin-top: 20px !important;
+  font-weight: 700;
+  margin: auto;
+  font-size: 1.6rem;
+  align-items: center;
+}
+.cart-total-price-div p {
+  margin-bottom: 0px;
+  margin-left: 1.5rem;
+}
+.cart-checkout-div button {
+  width: 45%;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: none;
+}

@@ -6,7 +6,6 @@ import ProductPage from "./ProductPage/ProductPage";
 import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
 
-
 const PageContainer = () => {
 
   return (

@@ -4,8 +4,7 @@ import Product from "../../components/Product/ProductCard";
 import "./ShopViewContainer.css";
 import { useEffect, useState } from "react";
 import { useGetProductsByCategoryPaginatedQuery } from "../../store/apiSlice";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setProduct } from "../../store/actionSlice";
 
