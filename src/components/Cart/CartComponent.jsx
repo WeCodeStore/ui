@@ -27,7 +27,8 @@ const CartComponent = ({ visible, closeCart }) => {
   }
 
   const checkIfDisabled = () => {
-    return cartList.size > 1 ? false : true;
+    const length = cartList.length;
+    return length > 0 ? false : true;
   }
 
   return (

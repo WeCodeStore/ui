@@ -6,12 +6,6 @@ import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import {
   persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
 } from "redux-persist";
 
 const persistConfig = {
@@ -31,8 +25,6 @@ export default configureStore({
   reducer: persistedReducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
+      serializableCheck: false,
     }).concat(apiSlice.middleware),
 });
