@@ -1,16 +1,16 @@
-import api from './apiSetup';
+import {axiosUser} from './ApiSetup';
 
-class  userService  {
+class  UserService  {
      registerUser(data){
-        return api.post ('/store/register', data);
+        return axiosUser.post ('/store/register', data);
      }
      loginUser(user){
-        return api.post('/store/login', user);
+        return axiosUser.post('/store/login', user);
      }
 
      getAllUser(){
-      return api.get('/store/users');
+      return axiosUser.get('/store/users');
    }
 }
 
-export default new userService();
+export default new UserService();

@@ -12,7 +12,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     extraReducers: {
-        [createUser.pending]: (state) => {
+       /* [createUser.pending]: (state) => {
           state.loading = true
           state.error = null
         },
@@ -38,7 +38,7 @@ const userSlice = createSlice({
         [retrieveUser.rejected]: (state, { payload }) => {
             state.loading = false
             state.error = payload
-        },
+        },  */
 
 
         [allUser.pending]: (state) => {
@@ -49,11 +49,11 @@ const userSlice = createSlice({
           state.loading = false
           state.success = true 
           state.user = payload
-      },
-      [allUser.rejected]: (state, { payload }) => {
+        },
+        [allUser.rejected]: (state, { payload }) => {
           state.loading = false
           state.error = payload
-      },
+        },
     },
 });
   

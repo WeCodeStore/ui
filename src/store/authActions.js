@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {  createUserWithEmailAndPassword, signInWithEmailAndPassword , database } from 'firebase/auth';
-import userService from'../services/userService';
+import UserService from'../services/UserService';
 import {auth} from '../firebaseConfig/config';
 
 export const registerUser = createAsyncThunk(
@@ -11,7 +11,7 @@ export const registerUser = createAsyncThunk(
                 //Removing password field from the user object.
                 const {password, ...userTemp} = regUser;
 
-                const res = await userService.registerUser(userTemp);
+                const res = await UserService.registerUser(userTemp);
                 if (res.status != 201){
                     const curUser=auth.currentUser;
                     curUser.delete().then(()=>{}).catch((error)=>{console.error("Eror deleting user")});
@@ -37,7 +37,7 @@ export const loginUser = createAsyncThunk(
     async (user, {rejectWithValue}) => {
         let userRes =null;
         try {
-                userRes = await userService.loginUser(user.email);
+                userRes = await UserService.loginUser(user.email);
         }catch(error){
             return rejectWithValue("Error server issue");
         }

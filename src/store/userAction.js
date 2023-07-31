@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import userService from'../services/userService';
+import UserService from'../services/userService';
 
 /*export const createUser = createAsyncThunk(
     'user/create',
@@ -35,7 +35,7 @@ export const allUser = createAsyncThunk(
   'user/retrieveAll',
   async ( {rejectWithValue}) => {
       try {
-              const res = await userService.getUser();
+              const res = await UserService.getUser();
             //  console.log('repponseUser is ' + JSON.stringify(responseUser));
               return res;
       }
