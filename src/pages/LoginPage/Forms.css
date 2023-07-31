@@ -1,0 +1,180 @@
+.buttons {
+  border:  #283455;
+  padding-top: 20px;
+  margin-top: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  
+} 
+.buttons button {
+  height: 5.5rem;
+  border-radius: 15px;
+}
+.button-white{
+  width: 50%;
+}
+.button-blue{
+  width: 30%;
+}
+
+.input {
+  width: 80%;
+  height: 5.5rem;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  position: relative;
+  border-radius: 15px;
+  background-color: white;
+  border: 2px solid #d4d2d2;
+}
+
+.input:hover {
+  border: 2px solid #d4d2d2;
+  background-color: #ebe9e9;
+}
+
+.input::placeholder {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.form {
+  display: flex;
+  gap: 4em;
+  
+  /* align-items: left; */
+}
+.input-form {
+  width: 60%;
+  display: flex;
+  flex-direction: column; 
+ margin-bottom: 8px; 
+}
+
+
+
+
+.card-form {
+  width: 1000px;
+  min-height: 400px;
+  justify-content: center;
+  /* display: flex; */
+  flex-direction: column;
+  padding: 0px 5px 20px 5px;
+  margin: 0px 20px 0px 20px;
+ 
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 99vh;
+}
+
+.account-header {
+  justify-content: left !important;
+  font-family: "ToledoTS-Bold";
+  font-size: 1rem;
+  padding: 10px;
+  font-weight: 900;
+  color: #283455;
+  /* /* font-weight: bold; * */
+}
+.title-account {
+  font-family: "ToledoTS-Bold";
+  font-size: 5em;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 900;
+  color: #283455;
+}
+
+.form-subheading {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  margin: 0;
+  margin-left: 6rem;
+
+}
+
+.subheading-ptag {
+  margin: 0;
+}
+
+.form-sign-up-m1 {
+  margin: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.form-sign-up-m2 {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #535bf2;
+  text-decoration: none;
+}
+
+.pass-cont {
+  display: flex;
+  width: 100%;
+  /* justify-content: center; */
+  margin-left: 0px; 
+}
+
+.icon-container {
+  margin-left: -40px;
+  align-self: center;
+  text-align: left;
+  display: flex;
+  cursor: pointer;
+  font-size: 25px;
+  color: #949292;
+}
+
+.name-fields {
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+}
+
+.name-field-input {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.name-fields-errors {
+  margin-right: 3rem;
+  margin-left: 3rem;
+  width: 100%;
+  color: red;
+  font-size: 1rem;
+  
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  width: 100%;
+  margin-left: 6rem;
+}
+
+
+.input-error {
+  border-color: red;
+}

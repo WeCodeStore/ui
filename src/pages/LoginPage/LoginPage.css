@@ -1,0 +1,55 @@
+.login-page {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: "Roboto";
+}
+
+.login-form {
+  display: flex;
+  gap: 4em;
+  margin-bottom: 80px;
+}
+
+form {
+    display: block;
+}
+.account-title {
+    /* font-size: 2.812rem; */
+    line-height: 3.231rem;
+    font-family: ToledoTS;
+    color: #283455;
+    font-weight: bold;
+
+}
+.title-account {
+    border: 1px solid rgba(40, 52, 85, 0.3);
+        display: block;
+        font-size: 2.812rem;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+
+ }
+
+ .login {
+    border: 1px solid rgba(40, 52, 85, 0.3);
+ }
+
+ .email-input-wrapper {
+    border: 1px solid rgba(40, 52, 85, 0.3);
+
+ }
+
+ .input-title {
+    border: 1px solid rgba(40, 52, 85, 0.3);
+    font-size: 12px;
+    margin-bottom: auto;
+    padding: auto;
+    color: #000;
+    font-weight: bold;
+ }
+  input {
+    box-sizing: border-box;
+  }

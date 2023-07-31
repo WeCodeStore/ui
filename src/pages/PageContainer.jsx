@@ -5,6 +5,7 @@ import ShopViewContainer from "../pages/ShopViewPage/ShopViewContainer";
 import ProductPage from "./ProductPage/ProductPage";
 import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
+import LoginPage from "./LoginPage/LoginPage";
 
 
 const PageContainer = () => {
@@ -19,6 +20,7 @@ const PageContainer = () => {
           <Route path="/" element={<HomeViewComponent />}></Route>
           <Route path="/shop/:catId" element={<ShopViewContainer />}></Route>
           <Route path="/shop/product/:prodId" element={<ProductPage />}></Route>
+          <Route path="/profile" element={<LoginPage />}></Route>
         </Routes>
         <Footer />
       </div>
