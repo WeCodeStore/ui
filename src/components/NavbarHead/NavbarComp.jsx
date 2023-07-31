@@ -30,13 +30,13 @@ export default function NavbarComp()  {
    <div className='navbar navbar'>
       <Navbar fixed="top" >
         <div className="container-navbar">
-          <div class="btn-custom-button">
+          <div className="btn-custom-button">
              <Button 
                 variant="link" 
                 className="link custom-button"  
                 aria-label="menu"  
                 onClick={toggleDrawer}  >
-                  <span class="navbar-toggler-menu"></span>
+                  <span className="navbar-toggler-menu"></span>
                   <img src="https://cdn.shopify.com/s/files/1/0951/7126/files/menu.svg?v=1653421355"
                   alt="Toggle navigation"  
                   />
