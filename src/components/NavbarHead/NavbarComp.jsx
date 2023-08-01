@@ -14,8 +14,8 @@ export default function NavbarComp() {
   const home = () => {
     nav("/");
   };
-  const profile = () => {
-    nav("/profile");
+  const login = () => {
+    nav("/store/login");
   };
   const openCartModal = () => {
     setCartVisibility(true);
@@ -57,7 +57,7 @@ export default function NavbarComp() {
             <img
               src="https://cdn.shopify.com/s/files/1/0951/7126/files/account.svg?v=1653421420"
               alt="User"
-              onClick={profile}
+              onClick={login}
             />
             <a className="navbar-cart"></a>
             <img

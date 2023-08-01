@@ -1,34 +1,50 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
+import { useDispatch } from "react-redux";
+import { loginUser, registerUser } from '../../store/authActions';
 
-const useForm = (callback, validate) => {
 
-  const [values, setValues] = useState({});
+const useForm = () => {
+
+  // const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-    }
-  }, [errors]);
-
+  const dispatch = useDispatch();
+ 
+  const regUser = {
+    email: email,
+    password: password,
+  }
+  
   const handleSubmit = (event) => {
-    if (event) event.preventDefault();
-    setErrors(validate(values));
-    setIsSubmitting(true);
+    
+     event.preventDefault();
+     dispatch(loginUser(regUser));
   };
 
-  const handleChange = (event) => {
-    event.persist();
-    setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-  };
+  const handleSignUp = () => {
+    dispatch(registerUser(regUser));
+
+ };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+      };
+
+  const handleChangePassword = (event) => {
+    setPassword(event.target.value);
+     };
+
 
   return {
-    handleChange,
+    handleChangeEmail,
+    handleChangePassword,
     handleSubmit,
-    values,
+    handleSignUp,
+    email,
+    password,
     errors,
   }
-};
-
+}
 export default useForm;

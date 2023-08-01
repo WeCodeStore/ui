@@ -38,12 +38,15 @@ export const loginUser = createAsyncThunk(
         let userRes = null;
         try {
                 userRes = await UserService.loginUser(user.email);
+                
         }catch(error){
             return rejectWithValue("Error server issue");
         }
         try{     
                 if (userRes?.status === 200){
+                  
                    const data = await signInWithEmailAndPassword(auth, user.email, user.password);
+                
                    const responseUser ={  
                       user:userRes.data,
                       idToken: data._tokenResponse.idToken,

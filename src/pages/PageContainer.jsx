@@ -6,6 +6,7 @@ import ProductPage from "./ProductPage/ProductPage";
 import NavbarComp from "../components/NavbarHead/NavbarComp";
 import './PageContainer.css'
 import LoginPage from "./LoginPage/LoginPage";
+import SignUpPage from "./LoginPage/SignUpPage";
 
 const PageContainer = () => {
 
@@ -19,7 +20,8 @@ const PageContainer = () => {
           <Route path="/" element={<HomeViewComponent />}></Route>
           <Route path="/shop/:catId" element={<ShopViewContainer />}></Route>
           <Route path="/shop/product/:prodId" element={<ProductPage />}></Route>
-          <Route path="/profile" element={<LoginPage />}></Route>
+          <Route path="/store/login" element={<LoginPage />}></Route>
+          <Route path="/store/register" element={<SignUpPage />}></Route>
         </Routes>
         <Footer />
       </div>
